@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission-Ready Civilian™ — Transition Strategy Intake | EQGenix</title>
+  <meta name="description" content="Pre-qualify for the Mission-Ready Civilian™ 12-week veteran transition program. A structured intake for veterans and service members ready to build civilian capacity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0B0B0B;
+      --bg-elevated: #111111;
+      --bg-input: #0E0E0E;
+      --gold: #C6A343;
+      --gold-dim: rgba(198, 163, 67, 0.15);
+      --gold-glow: rgba(198, 163, 67, 0.08);
+      --white: #F5F5F5;
+      --white-muted: rgba(245, 245, 245, 0.55);
+      --white-faint: rgba(245, 245, 245, 0.12);
+      --border: rgba(198, 163, 67, 0.2);
+      --border-focus: rgba(198, 163, 67, 0.6);
+      --error: #D4544C;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Raleway', 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--white-faint);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 11, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .top-bar__brand {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .top-bar__tag {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-muted);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero__title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero__subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .hero__rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      border: none;
+      margin: 0 auto 2rem;
+    }
+
+    .hero__desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--white);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ─── FORM CONTAINER ─── */
+    .intake {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .intake__section {
+      margin-bottom: 2.5rem;
+    }
+
+    .intake__section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--white-faint);
+    }
+
+    .intake__section-number {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .intake__section-title {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    /* ─── FORM FIELDS ─── */
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    .field__label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .field__label--required::after {
+      content: ' *';
+      color: var(--gold);
+    }
+
+    .field__input,
+    .field__select,
+    .field__textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--white);
+      background: var(--bg-input);
+      border: 1px solid var(--white-faint);
+      padding: 0.85rem 1rem;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .field__input:focus,
+    .field__select:focus,
+    .field__textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+
+    .field__input::placeholder,
+    .field__textarea::placeholder {
+      color: rgba(245, 245, 245, 0.2);
+      font-weight: 300;
+    }
+
+    .field__select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23C6A343' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .field__select option {
+      background: var(--bg);
+      color: var(--white);
+    }
+
+    .field__textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .field__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .field__hint {
+      font-size: 0.7rem;
+      color: var(--white-muted);
+      margin-top: 0.35rem;
+      font-weight: 300;
+    }
+
+    /* ─── RADIO / CHECKBOX GROUPS ─── */
+    .field__options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .field__option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      cursor: pointer;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .field__option:hover {
+      border-color: var(--white-faint);
+      background: var(--gold-glow);
+    }
+
+    .field__option input[type="radio"],
+    .field__option input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--border);
+      background: transparent;
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .field__option input[type="radio"] {
+      border-radius: 50%;
+    }
+
+    .field__option input[type="radio"]:checked,
+    .field__option input[type="checkbox"]:checked {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .field__option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      background: var(--bg);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .field__option input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      width: 5px;
+      height: 9px;
+      border: solid var(--bg);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .field__option-label {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    .field__option-desc {
+      font-size: 0.7rem;
+      color: var(--white-muted);
+      font-weight: 300;
+    }
+
+    /* ─── CONSENT ─── */
+    .consent {
+      padding: 1.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--white-faint);
+      margin-bottom: 2rem;
+    }
+
+    .consent__text {
+      font-size: 0.72rem;
+      color: var(--white-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .consent__text a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+
+    .consent__text a:hover {
+      border-color: var(--gold);
+    }
+
+    /* ─── SUBMIT ─── */
+    .submit-area {
+      text-align: center;
+    }
+
+    .submit-btn {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: none;
+      padding: 1.1rem 3.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .submit-btn:hover {
+      background: #d4b04e;
+      box-shadow: 0 4px 24px rgba(198, 163, 67, 0.25);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .submit-btn:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .submit__note {
+      font-size: 0.65rem;
+      color: var(--white-muted);
+      margin-top: 1rem;
+      font-weight: 300;
+    }
+
+    /* ─── CONFIRMATION STATE ─── */
+    .confirmation {
+      display: none;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .confirmation.active {
+      display: block;
+    }
+
+    .confirmation__icon {
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .confirmation__icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
+    }
+
+    .confirmation__title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .confirmation__text {
+      font-size: 0.85rem;
+      color: var(--white-muted);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--white-faint);
+    }
+
+    .footer__logo {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__copy {
+      font-size: 0.6rem;
+      color: rgba(245, 245, 245, 0.3);
+      font-weight: 300;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--white-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ─── VALIDATION ─── */
+    .field--error .field__input,
+    .field--error .field__select,
+    .field--error .field__textarea {
+      border-color: var(--error);
+    }
+
+    .field__error-msg {
+      display: none;
+      font-size: 0.68rem;
+      color: var(--error);
+      margin-top: 0.3rem;
+      font-weight: 400;
+    }
+
+    .field--error .field__error-msg {
+      display: block;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 480px) {
+      .field__row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 3rem 1.25rem 2.5rem;
+      }
+
+      .intake {
+        padding: 0 1.25rem 3rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 5rem 2rem 3.5rem;
+      }
+
+      .intake {
+        padding: 0 2rem 5rem;
+      }
+
+      .top-bar {
+        padding: 1rem 2.5rem;
+      }
+    }
+
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ─── FOCUS VISIBLE ─── */
+    *:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* ─── SKIP LINK ─── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 200;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#intake-form" class="skip-link">Skip to intake form</a>
+
+  <!-- TOP BAR -->
+  <header class="top-bar" role="banner">
+    <div class="top-bar__brand">EQGenix</div>
+    <div class="top-bar__tag">Strategy Intake</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__badge">Mission-Ready Civilian™</div>
+    <h1 class="hero__title" id="hero-title">Transition <em>Strategy</em> Intake</h1>
+    <p class="hero__subtitle">12-Week Veteran Capacity Building Program</p>
+    <hr class="hero__rule" aria-hidden="true">
+    <p class="hero__desc">
+      This is not a contact form. This is a structured intake designed to assess your readiness 
+      for the Mission-Ready Civilian™ program and match you with the right transition track. 
+      Every field informs your personalized strategy.
+    </p>
+  </section>
+
+  <!-- INTAKE FORM -->
+  <main class="intake" id="intake-form" role="main">
+    <form id="mrc-intake" name="strategy-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/mrc-success.html" novalidate aria-label="Mission-Ready Civilian strategy intake form">
+      <input type="hidden" name="form-name" value="strategy-intake">
+      <div style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden;visibility:hidden" aria-hidden="true">
+        <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- SECTION 1: IDENTITY -->
+      <section class="intake__section" aria-labelledby="sec-1-title">
+        <div class="intake__section-header">
+          <span class="intake__section-number" aria-hidden="true">1</span>
+          <h2 class="intake__section-title" id="sec-1-title">Service Member Identity</h2>
+        </div>
+
+        <div class="field__row">
+          <div class="field">
+            <label for="first-name" class="field__label field__label--required">First Name</label>
+            <input type="text" id="first-name" name="first_name" class="field__input" autocomplete="given-name" required>
+            <span class="field__error-msg">Required</span>
+          </div>
+          <div class="field">
+            <label for="last-name" class="field__label field__label--required">Last Name</label>
+            <input type="text" id="last-name" name="last_name" class="field__input" autocomplete="family-name" required>
+            <span class="field__error-msg">Required</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email" class="field__label field__label--required">Email Address</label>
+          <input type="email" id="email" name="email" class="field__input" autocomplete="email" placeholder="your@email.com" required>
+          <span class="field__error-msg">Valid email required</span>
+        </div>
+
+        <div class="field">
+          <label for="phone" class="field__label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="field__input" autocomplete="tel" placeholder="(555) 000-0000">
+        </div>
+
+        <div class="field">
+          <label for="location" class="field__label field__label--required">Current Location</label>
+          <input type="text" id="location" name="location" class="field__input" placeholder="City, State" required>
+          <span class="field__error-msg">Required</span>
+        </div>
+      </section>
+
+      <!-- SECTION 2: SERVICE BACKGROUND -->
+      <section class="intake__section" aria-labelledby="sec-2-title">
+        <div class="intake__section-header">
+          <span class="intake__section-number" aria-hidden="true">2</span>
+          <h2 class="intake__section-title" id="sec-2-title">Service Background</h2>
+        </div>
+
+        <div class="field">
+          <label for="branch" class="field__label field__label--required">Branch of Service</label>
+          <select id="branch" name="branch" class="field__select" required>
+            <option value="" disabled selected>Select branch</option>
+            <option value="army">U.S. Army</option>
+            <option value="navy">U.S. Navy</option>
+            <option value="air_force">U.S. Air Force</option>
+            <option value="marines">U.S. Marine Corps</option>
+            <option value="coast_guard">U.S. Coast Guard</option>
+            <option value="space_force">U.S. Space Force</option>
+            <option value="national_guard">National Guard</option>
+            <option value="reserves">Reserves</option>
+          </select>
+          <span class="field__error-msg">Required</span>
+        </div>
+
+        <div class="field__row">
+          <div class="field">
+            <label for="rank" class="field__label">Rank at Separation / Current Rank</label>
+            <input type="text" id="rank" name="rank" class="field__input" placeholder="e.g., E-5 / SGT">
+          </div>
+          <div class="field">
+            <label for="years-served" class="field__label field__label--required">Years of Service</label>
+            <select id="years-served" name="years_served" class="field__select" required>
+              <option value="" disabled selected>Select range</option>
+              <option value="under_4">Under 4 years</option>
+              <option value="4_8">4–8 years</option>
+              <option value="8_12">8–12 years</option>
+              <option value="12_20">12–20 years</option>
+              <option value="20_plus">20+ years</option>
+            </select>
+            <span class="field__error-msg">Required</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label field__label--required" id="status-label">Current Status</label>
+          <div class="field__options" role="radiogroup" aria-labelledby="status-label">
+            <label class="field__option">
+              <input type="radio" name="status" value="active_transitioning" required>
+              <span>
+                <span class="field__option-label">Active Duty — Transitioning</span>
+                <span class="field__option-desc">Currently serving, separation within 12 months</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="status" value="recently_separated">
+              <span>
+                <span class="field__option-label">Recently Separated</span>
+                <span class="field__option-desc">Within the last 24 months</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="status" value="veteran">
+              <span>
+                <span class="field__option-label">Veteran</span>
+                <span class="field__option-desc">Separated more than 24 months ago</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="status" value="guard_reserve">
+              <span>
+                <span class="field__option-label">Guard / Reserve — Seeking Civilian Capacity</span>
+              </span>
+            </label>
+          </div>
+          <span class="field__error-msg">Required</span>
+        </div>
+      </section>
+
+      <!-- SECTION 3: TRANSITION READINESS -->
+      <section class="intake__section" aria-labelledby="sec-3-title">
+        <div class="intake__section-header">
+          <span class="intake__section-number" aria-hidden="true">3</span>
+          <h2 class="intake__section-title" id="sec-3-title">Transition Readiness Assessment</h2>
+        </div>
+
+        <div class="field">
+          <label class="field__label field__label--required" id="challenge-label">Primary Strategic Focus</label>
+          <p class="field__hint">Which area do you want to build capacity in first?</p>
+          <div class="field__options" role="radiogroup" aria-labelledby="challenge-label">
+            <label class="field__option">
+              <input type="radio" name="primary_challenge" value="identity" required>
+              <span>
+                <span class="field__option-label">Identity Reconstruction</span>
+                <span class="field__option-desc">"I don't know who I am outside the uniform."</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="primary_challenge" value="emotional_regulation">
+              <span>
+                <span class="field__option-label">Emotional Regulation</span>
+                <span class="field__option-desc">Anger, frustration, detachment, or hypervigilance in civilian settings</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="primary_challenge" value="relational">
+              <span>
+                <span class="field__option-label">Relational Intelligence</span>
+                <span class="field__option-desc">Difficulty connecting with family, colleagues, or civilian peers</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="primary_challenge" value="purpose">
+              <span>
+                <span class="field__option-label">Purpose & Direction</span>
+                <span class="field__option-desc">Career uncertainty, loss of mission, lack of structure</span>
+              </span>
+            </label>
+          </div>
+          <span class="field__error-msg">Required</span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" id="secondary-label">Additional Areas of Concern</label>
+          <p class="field__hint">Select all that apply.</p>
+          <div class="field__options" aria-labelledby="secondary-label">
+            <label class="field__option">
+              <input type="checkbox" name="secondary_challenges" value="cognitive_sovereignty">
+              <span class="field__option-label">Cognitive Sovereignty — Decision-making & independent thinking</span>
+            </label>
+            <label class="field__option">
+              <input type="checkbox" name="secondary_challenges" value="effort_tolerance">
+              <span class="field__option-label">Effort Tolerance — Sustaining motivation without external structure</span>
+            </label>
+            <label class="field__option">
+              <input type="checkbox" name="secondary_challenges" value="resilience">
+              <span class="field__option-label">Resilience Architecture — Recovering from setbacks</span>
+            </label>
+            <label class="field__option">
+              <input type="checkbox" name="secondary_challenges" value="family_reintegration">
+              <span class="field__option-label">Family Reintegration — Rebuilding household dynamics</span>
+            </label>
+            <label class="field__option">
+              <input type="checkbox" name="secondary_challenges" value="civilian_workplace">
+              <span class="field__option-label">Civilian Workplace Navigation — Corporate culture, communication</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prior-programs" class="field__label">Prior Transition Support</label>
+          <p class="field__hint">Have you completed TAP, any VA programs, or private coaching?</p>
+          <textarea id="prior-programs" name="prior_programs" class="field__textarea" placeholder="e.g., Completed TAP in 2024. Tried a career coach but it didn't address the deeper issues."></textarea>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ENGAGEMENT PREFERENCES -->
+      <section class="intake__section" aria-labelledby="sec-4-title">
+        <div class="intake__section-header">
+          <span class="intake__section-number" aria-hidden="true">4</span>
+          <h2 class="intake__section-title" id="sec-4-title">Engagement & Commitment</h2>
+        </div>
+
+        <div class="field">
+          <label class="field__label field__label--required" id="format-label">Preferred Format</label>
+          <div class="field__options" role="radiogroup" aria-labelledby="format-label">
+            <label class="field__option">
+              <input type="radio" name="format" value="cohort" required>
+              <span>
+                <span class="field__option-label">Cohort-Based</span>
+                <span class="field__option-desc">12-week structured group intensive</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="format" value="one_on_one">
+              <span>
+                <span class="field__option-label">1-on-1 Strategy Track</span>
+                <span class="field__option-desc">Individualized sessions with a facilitator</span>
+              </span>
+            </label>
+            <label class="field__option">
+              <input type="radio" name="format" value="either">
+              <span>
+                <span class="field__option-label">Open to Either</span>
+                <span class="field__option-desc">Let the strategy call determine best fit</span>
+              </span>
+            </label>
+          </div>
+          <span class="field__error-msg">Required</span>
+        </div>
+
+        <div class="field">
+          <label class="field__label field__label--required" id="referral-label">How Did You Hear About MRC™?</label>
+          <select id="referral" name="referral" class="field__select" aria-labelledby="referral-label" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="va_referral">VA or Military Referral</option>
+            <option value="fellow_veteran">Fellow Veteran</option>
+            <option value="social_media">Social Media</option>
+            <option value="employer">Employer or HR</option>
+            <option value="nonprofit">Nonprofit / VSO Partner</option>
+            <option value="local_event">Local Event</option>
+            <option value="search">Web Search</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="field__error-msg">Required</span>
+        </div>
+
+        <div class="field">
+          <label for="goals" class="field__label">What Does a Successful Transition Look Like for You?</label>
+          <textarea id="goals" name="goals" class="field__textarea" placeholder="In your own words — there are no wrong answers."></textarea>
+        </div>
+      </section>
+
+      <!-- CONSENT -->
+      <div class="consent">
+        <label class="field__option" style="padding: 0; border: none;">
+          <input type="checkbox" id="consent" name="consent" value="yes" required>
+          <span class="consent__text">
+            I understand this intake is confidential and will be used solely to evaluate my fit for the 
+            Mission-Ready Civilian™ program. I consent to being contacted by EQGenix regarding 
+            my transition strategy. <a href="privacy.html">Privacy Policy</a>
+          </span>
+        </label>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="submit-area">
+        <button type="submit" class="submit-btn">Request Strategy Call</button>
+        <p class="submit__note">
+          You'll receive a confirmation within 24 hours with next steps and your pre-assessment brief.
+        </p>
+      </div>
+    </form>
+
+    <!-- CONFIRMATION -->
+    <div class="confirmation" id="confirmation" role="status" aria-live="polite">
+      <div class="confirmation__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2 class="confirmation__title">Intake Received</h2>
+      <p class="confirmation__text">
+        Your transition strategy intake has been submitted. Our team will review your responses 
+        and reach out within 48 hours to schedule your strategy call.<br><br>
+        <strong style="color: var(--gold);">Built, Not Downloaded.™</strong>
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__logo">EQGenix Inc.</div>
+    <p class="footer__copy">© 2026 EQGenix Inc. All rights reserved. Mission-Ready Civilian™ is a trademark of EQGenix Inc.</p>
+    <p class="footer__tagline">Built, Not Downloaded.™</p>
+  </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('mrc-intake');
+      const confirmation = document.getElementById('confirmation');
+
+      form.addEventListener('submit', (e) => {
+        // Clear previous errors
+        form.querySelectorAll('.field--error').forEach(f => f.classList.remove('field--error'));
+        
+        let firstError = null;
+        let valid = true;
+
+        // Validate required text/email/select inputs
+        form.querySelectorAll('[required]').forEach(input => {
+          if (input.type === 'radio') return; // handled separately
+          if (input.type === 'checkbox' && !input.checked) {
+            const field = input.closest('.consent') || input.closest('.field');
+            if (field) field.classList.add('field--error');
+            if (!firstError) firstError = input;
+            valid = false;
+          } else if (!input.value.trim()) {
+            const field = input.closest('.field');
+            if (field) field.classList.add('field--error');
+            if (!firstError) firstError = input;
+            valid = false;
+          } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+            const field = input.closest('.field');
+            if (field) field.classList.add('field--error');
+            if (!firstError) firstError = input;
+            valid = false;
+          }
+        });
+
+        // Validate required radio groups
+        ['status', 'primary_challenge', 'format'].forEach(name => {
+          const radios = form.querySelectorAll(`input[name="${name}"]`);
+          const checked = form.querySelector(`input[name="${name}"]:checked`);
+          if (!checked) {
+            const field = radios[0]?.closest('.field');
+            if (field) field.classList.add('field--error');
+            if (!firstError) firstError = radios[0];
+            valid = false;
+          }
+        });
+
+        if (!valid) {
+          e.preventDefault();
+          firstError?.focus();
+          firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        // If valid, form submits natively to Netlify
+      });
+
+      // Clear errors on input
+      form.addEventListener('input', (e) => {
+        const field = e.target.closest('.field') || e.target.closest('.consent');
+        if (field) field.classList.remove('field--error');
+      });
+
+      form.addEventListener('change', (e) => {
+        const field = e.target.closest('.field') || e.target.closest('.consent');
+        if (field) field.classList.remove('field--error');
+      });
+    })();
+  </script>
+</body>
+</html>

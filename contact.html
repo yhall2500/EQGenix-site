@@ -981,7 +981,7 @@ nav.scrolled {
   max-width: 1080px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
   gap: 0;
   min-height: 30vh;
 }
@@ -995,6 +995,8 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-block-label {
@@ -1341,6 +1343,14 @@ footer {
 </head>
 <body>
 
+  <!-- Netlify form detection -->
+  <form name="eqgenix-inquiry" netlify netlify-honeypot="bot-field" hidden>
+    <input name="form-name" type="hidden" value="eqgenix-inquiry">
+    <input name="bot-field">
+    <input name="fname"><input name="lname"><input name="email"><input name="phone"><input name="org">
+    <select name="interest"><option value=""></option></select>
+    <textarea name="message"></textarea>
+  </form>
   <nav id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">EQGenix</a>
@@ -1368,17 +1378,23 @@ footer {
   </section>
 
   <section class="content-section bg-slate" style="padding:0 2rem">
-    <div class="contact-grid reveal">
+    <div class="contact-grid">
       <div class="contact-block">
         <p class="contact-block-label">Email</p>
-        <p class="contact-block-value"><a href="mailto:Contact@eqgenix.com">Contact@eqgenix.com</a></p>
+        <p class="contact-block-value"><a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a></p>
         <p class="contact-block-note">For general inquiries, partnership discussions, and program information.</p>
       </div>
       <div class="contact-grid-line"></div>
       <div class="contact-block">
         <p class="contact-block-label">Phone</p>
-        <p class="contact-block-value"><a href="tel:8888247244">888-824-7244</a></p>
+        <p class="contact-block-value" style="white-space:nowrap"><a href="tel:8888247244">888-824-7244</a></p>
         <p class="contact-block-note">Available Monday through Friday during standard business hours.</p>
+      </div>
+      <div class="contact-grid-line"></div>
+      <div class="contact-block">
+        <p class="contact-block-label">Office Address</p>
+        <p class="contact-block-value" style="font-size:clamp(1rem,1.8vw,1.5rem)">260 Newport Center Drive</p>
+        <p class="contact-block-note">Suite 100 &bull; Newport Beach, CA 92660</p>
       </div>
     </div>
   </section>
@@ -1388,14 +1404,16 @@ footer {
   </section>
 
   <section class="content-section bg-slate" style="padding:0 2rem 100px">
-    <div class="contact-form-section reveal">
+    <div class="contact-form-section">
       <div class="contact-form-header">
         <p class="section-label">Submit an Inquiry</p>
         <div class="section-rule"></div>
         <h2>Tell us about your context.</h2>
         <p>Complete the form below and a member of our advisory team will respond within two business days.</p>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault();">
+      <form class="contact-form" name="eqgenix-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+        <input type="hidden" name="form-name" value="eqgenix-inquiry">
+        <div style="display:none"><input name="bot-field"></div>
         <div><label for="fname">First Name</label><input type="text" id="fname" name="fname" required></div>
         <div><label for="lname">Last Name</label><input type="text" id="lname" name="lname" required></div>
         <div><label for="email">Email</label><input type="email" id="email" name="email" required></div>
@@ -1406,7 +1424,7 @@ footer {
         <div class="full-width" style="display:flex;justify-content:center"><button type="submit" class="contact-form-submit">Submit Inquiry</button></div>
       </form>
       <div class="contact-cta-strip">
-        <p>For nonprofit inquiries related to <a href="#">Life in Darkness</a>, our 501(c)(3), please include that in your message or email us directly at <a href="mailto:Contact@eqgenix.com">Contact@eqgenix.com</a>.</p>
+        <p>For nonprofit inquiries related to <a href="https://www.lifeindarkness.org">Life in Darkness</a>, our 501(c)(3), please include that in your message or email us directly at <a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a>.</p>
       </div>
     </div>
   </section>
@@ -1426,7 +1444,7 @@ footer {
       </div>
       <div class="footer-bottom">
         <span class="footer-legal">&copy; EQGenix Inc. All rights reserved. Built, Not Downloaded&trade;, Emotional Portfolio&trade;, Mission-Ready Civilian&trade;, ASCEND&trade;, Grit to Genius&trade;, Mentor to Men&trade;, and The Sovereign Workforce Program&trade; are trademarks of EQGenix Inc.</span>
-        <span class="footer-nonprofit">Advisory work supports <a href="#">Life in Darkness</a>, a 501(c)(3).</span>
+        <span class="footer-nonprofit">Advisory work supports <a href="https://www.lifeindarkness.org">Life in Darkness</a>, a 501(c)(3).</span>
       </div>
     </div>
   </footer>
@@ -1459,22 +1477,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  if (reveals.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    );
-    reveals.forEach(el => observer.observe(el));
-  }
-
-});
-
-</script>
-</body>
-</html>
+  if (reveals.length

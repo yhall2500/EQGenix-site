@@ -224,13 +224,6 @@ footer {
       toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
       navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     }
-    const reveals = document.querySelectorAll('.reveal');
-    if (reveals.length) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-      }, { threshold: 0.08 });
-      reveals.forEach(el => observer.observe(el));
-    }
   });
   </script>
 </body>

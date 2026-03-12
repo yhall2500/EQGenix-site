@@ -1299,6 +1299,33 @@ footer {
 
 
 /* ═══════════════════════════════════════════
+   TRUST ROW (BBB + Assessment)
+   ═══════════════════════════════════════════ */
+.trust-row {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.trust-col {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.trust-divider {
+  background: rgba(201,168,76,.15);
+  width: 1px;
+  height: 120px;
+  align-self: center;
+}
+
+/* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
 
@@ -1312,6 +1339,9 @@ footer {
   .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   .credentials { grid-template-columns: 1fr; }
   .home-previews { grid-template-columns: 1fr; }
+  .trust-row { grid-template-columns: 1fr; }
+  .trust-divider { display: none; }
+  .trust-col { padding: 2rem 1.25rem; max-width: 100%; align-items: center; text-align: center; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-grid-line { height: 1px; width: 80%; margin: 0 auto; }
   .contact-block { padding: 2.5rem 2rem; }
@@ -1422,9 +1452,9 @@ footer {
 
   <!-- BBB Trust + Assessment Promo Row -->
   <section style="padding:48px 2rem;background:var(--black);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)">
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:center">
+    <div class="trust-row">
       <!-- BBB Trust Badge -->
-      <div style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
+      <div class="trust-col">
         <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Accredited Member</p>
         <a href="https://www.bbb.org" target="_blank" rel="noopener noreferrer" title="EQGenix Inc. — Better Business Bureau" style="display:inline-flex;align-items:center;gap:1rem;text-decoration:none;padding:14px 20px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);transition:all .3s" onmouseover="this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)'">
           <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business">
@@ -1439,9 +1469,9 @@ footer {
         <p style="font-size:.78rem;color:var(--stone);line-height:1.7;max-width:280px">EQGenix Inc. is committed to upholding the highest standards of trust, transparency, and professional ethics.</p>
       </div>
       <!-- Divider -->
-      <div style="background:rgba(201,168,76,.15);width:1px;height:120px;align-self:center"></div>
+      <div class="trust-divider"></div>
       <!-- Assessment Promo -->
-      <div id="assessment-promo" style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
+      <div id="assessment-promo" class="trust-col">
         <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Free Assessment</p>
         <h3 style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--white);line-height:1.3">Emotional Wealth<br><em style="color:var(--gold-light)">Diagnostic</em></h3>
         <p style="font-size:.88rem;color:var(--stone-light);line-height:1.75;max-width:300px">Discover your current emotional wealth position. 10 questions. Immediate results with a personalized category.</p>
@@ -1520,8 +1550,8 @@ footer {
         </div>
         <div class="footer-columns">
           <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
-          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="contact.html">Inquire</a><a href="assessment.html">Diagnostic</a></div>
-          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a></div>
+          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div>
+          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a></div>
         </div>
       </div>
       <div class="footer-bottom">

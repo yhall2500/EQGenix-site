@@ -1453,8 +1453,8 @@ footer {
         </div>
         <div class="footer-columns">
           <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
-          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="contact.html">Inquire</a><a href="assessment.html">Diagnostic</a></div>
-          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a></div>
+          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div>
+          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a></div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -1463,14 +1463,38 @@ footer {
       </div>
     </div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Nav scroll
-    var nav = document.getElementById('mainNav');
-    if (nav) {
-      window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var nav = document.getElementById("mainNav");
+    if (nav) window.addEventListener("scroll", function() { nav.classList.toggle("scrolled", window.scrollY > 40); }, {passive:true});
+    var toggle = document.getElementById("mobileToggle");
+    var links = document.getElementById("navLinks");
+    if (toggle && links) {
+      toggle.setAttribute("aria-expanded","false");
+      toggle.addEventListener("click", function(e) {
+        e.preventDefault(); e.stopPropagation();
+        var open = links.classList.contains("open");
+        links.classList.toggle("open", !open);
+        toggle.setAttribute("aria-expanded", String(!open));
+        document.body.style.overflow = open ? "" : "hidden";
+      });
+      links.querySelectorAll("a").forEach(function(a) {
+        a.addEventListener("click", function() {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded","false");
+          document.body.style.overflow = "";
+        });
+      });
+      document.addEventListener("click", function(e) {
+        if (!links.classList.contains("open")) return;
+        if (!links.contains(e.target) && !toggle.contains(e.target)) {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded","false");
+          document.body.style.overflow = "";
+        }
       });
     }
-    // Mobile toggle
-    var toggle = document.getElementById('mobileToggle')
+  });
+  </script>
+</body>
+</html>

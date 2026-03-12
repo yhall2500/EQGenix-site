@@ -143,6 +143,7 @@ footer {
 @media (max-width: 680px) {
   .nav-links, .nav-inquiry { display: none; }
   .mobile-toggle { display: block; }
+  .nav-links.open { display:flex;flex-direction:column;position:absolute;top:68px;left:0;width:100%;background:var(--slate-deep);padding:1.5rem 1.25rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(201,168,76,0.1);z-index:999 }
   .success__cta { width: 100%; text-align: center; }
   .footer-top { flex-direction: column; gap: 2rem; }
   .footer-columns { flex-direction: column; gap: 1.5rem; }
@@ -156,10 +157,10 @@ footer {
 </head>
 <body>
 
-  <nav>
+  <nav id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">EQGenix</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="thesis.html">Thesis</a></li>
         <li><a href="framework.html">Framework</a></li>
         <li><a href="advisory.html">Advisory</a></li>
@@ -168,7 +169,7 @@ footer {
         <li><a href="assessment.html">Diagnostic</a></li>
       </ul>
       <a href="contact.html" class="nav-inquiry">Inquire</a>
-      <button class="mobile-toggle" aria-label="Menu">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -199,8 +200,8 @@ footer {
         </div>
         <div class="footer-columns">
           <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
-          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="contact.html">Inquire</a><a href="assessment.html">Diagnostic</a></div>
-          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a>
+          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div>
+          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a>
           </div>
         </div>
       </div>
@@ -218,11 +219,32 @@ footer {
     if (nav) {
       window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
     }
-    const toggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (toggle && navLinks) {
-      toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    var toggle = document.getElementById('mobileToggle');
+    var links = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.setAttribute('aria-expanded','false');
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        var open = links.classList.contains('open');
+        links.classList.toggle('open', !open);
+        toggle.setAttribute('aria-expanded', String(!open));
+        document.body.style.overflow = open ? '' : 'hidden';
+      });
+      links.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+          document.body.style.overflow = '';
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (!links.classList.contains('open')) return;
+        if (!links.contains(e.target) && !toggle.contains(e.target)) {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+          document.body.style.overflow = '';
+        }
+      });
     }
   });
   </script>

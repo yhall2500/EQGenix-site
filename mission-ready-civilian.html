@@ -79,6 +79,18 @@
       color: var(--white-muted);
     }
 
+
+    .top-bar__back {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .top-bar__back:hover { opacity: 1; }
     /* ─── HERO ─── */
     .hero {
       position: relative;
@@ -594,8 +606,9 @@
 
   <!-- TOP BAR -->
   <header class="top-bar" role="banner">
-    <div class="top-bar__brand">EQGenix</div>
+    <a href="index.html" class="top-bar__brand" style="text-decoration:none;">EQGenix</a>
     <div class="top-bar__tag">Strategy Intake</div>
+    <a href="index.html" class="top-bar__back">← Back to EQGenix</a>
   </header>
 
   <!-- HERO -->
@@ -875,7 +888,7 @@
           <span class="consent__text">
             I understand this intake is confidential and will be used solely to evaluate my fit for the 
             Mission-Ready Civilian™ program. I consent to being contacted by EQGenix regarding 
-            my transition strategy. <a href="privacy.html">Privacy Policy</a>
+            my transition strategy. <a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a>
           </span>
         </label>
       </div>
@@ -907,7 +920,7 @@
 
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
-    <div class="footer__logo">EQGenix Inc.</div>
+    <a href="index.html" class="footer__logo" style="text-decoration:none;">EQGenix Inc.</a>
     <p class="footer__copy">© 2026 EQGenix Inc. All rights reserved. Mission-Ready Civilian™ is a trademark of EQGenix Inc.</p>
     <p class="footer__tagline">Built, Not Downloaded.™</p>
   </footer>

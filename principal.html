@@ -1569,6 +1569,16 @@ footer {
     }
 
     @media (max-width: 680px) {
+      .nav-inner {
+        padding: 0 1.25rem;
+      }
+      .nav-links.open {
+        padding: 1.5rem 1.25rem 2rem;
+      }
+      .page-hero {
+        min-height: auto;
+        padding: 118px 1.25rem 56px;
+      }
       .credentials-strip {
         grid-template-columns: 1fr;
       }
@@ -1578,6 +1588,18 @@ footer {
       }
       .credential-cell:last-child {
         border-bottom: none;
+      }
+      .principal-testimonials {
+        padding: 72px 1.25rem !important;
+      }
+      .principal-testimonial-list {
+        gap: 2rem !important;
+      }
+      .principal-testimonial-card {
+        padding: 1.5rem 0 1.5rem 1.25rem !important;
+      }
+      .principal-cta {
+        padding: 64px 1.25rem;
       }
     }
   </style>
@@ -1657,37 +1679,37 @@ footer {
 
     <div class="bio-section">
       <p class="bio-label">Formation</p>
-      <p>My work is informed by formal training in technology, social and political science, and psychology, and by the irreplaceable education of raising seven children, caring for twelve grandchildren, twenty years of caregiving for my mother, and serving as a Guardian ad Litem in Florida and California courts.</p>
+      <p>My work is informed by formal training in technology, social and political science, and psychology, and by the irreplaceable education of being a wife, raising seven children, caring for twelve grandchildren, twenty years of caregiving for my mother, and serving as a Guardian ad Litem in Florida and California courts.</p>
       <p>The Emotional Portfolio&trade; framework is the synthesis of everything I have learned: that emotional wealth compounds, that cognitive sovereignty must be trained, that resilience is architecture not attitude, and that the human capacities AI cannot replicate are precisely the ones we have most neglected to develop.</p>
     </div>
   </section>
 
 
   <!-- Testimonials -->
-  <section style="padding:100px 2rem;background:var(--slate-deep)">
+  <section class="principal-testimonials" style="padding:100px 2rem;background:var(--slate-deep)">
     <div style="max-width:840px;margin:0 auto">
       <div style="text-align:center;margin-bottom:5rem">
         <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">In Their Words</p>
         <div style="width:36px;height:1px;background:rgba(201,168,76,0.3);margin:0 auto"></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:3.5rem">
+      <div class="principal-testimonial-list" style="display:flex;flex-direction:column;gap:3.5rem">
 
-        <div style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
+        <div class="principal-testimonial-card" style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
           <p style="font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.75;margin-bottom:1.5rem">&ldquo;I have worked with executive coaches who handed me frameworks. Yvonne handed me self-knowledge. There is no comparison. This is the work that actually changes organizations — because it starts with the person running them.&rdquo;</p>
           <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)">VP of Strategy &mdash; <span style="color:var(--stone)">Federal Defense Contractor</span></p>
         </div>
 
-        <div style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
+        <div class="principal-testimonial-card" style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
           <p style="font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.75;margin-bottom:1.5rem">&ldquo;Yvonne sees what most people miss and names it without flinching. I came to her with a leadership problem. She showed me it was a sovereignty problem. That reframe saved my career.&rdquo;</p>
           <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)">Chief Operating Officer &mdash; <span style="color:var(--stone)">Mid-Market Technology Firm</span></p>
         </div>
 
-        <div style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
+        <div class="principal-testimonial-card" style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
           <p style="font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.75;margin-bottom:1.5rem">&ldquo;We brought EQGenix into our school community because we needed more than a social-emotional curriculum — we needed something built on real cognitive science. What Yvonne delivered changed how our families talk about the mind.&rdquo;</p>
           <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)">Head of School &mdash; <span style="color:var(--stone)">Private Christian Academy, Southeast</span></p>
         </div>
 
-        <div style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
+        <div class="principal-testimonial-card" style="padding:3rem;border-left:2px solid rgba(201,168,76,0.3);padding-left:2.5rem">
           <p style="font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--white);line-height:1.75;margin-bottom:1.5rem">&ldquo;I separated from 14 years of service and had no language for what I was experiencing. Yvonne gave me that language, and then she gave me a plan. I did not just transition — I rebuilt.&rdquo;</p>
           <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)">Mission-Ready Civilian&trade; Graduate &mdash; <span style="color:var(--stone)">U.S. Army, 14 Years</span></p>
         </div>

@@ -1326,6 +1326,8 @@ footer {
   .nav-links, .nav-inquiry { display: none; }
   .mobile-toggle { display: block; }
 
+  .nav-inner { padding: 0 1.25rem; }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -1334,12 +1336,20 @@ footer {
     left: 0;
     width: 100%;
     background: var(--slate-deep);
-    padding: 1.5rem 2.5rem 2rem;
+    padding: 1.5rem 1.25rem 2rem;
     gap: 1.2rem;
     border-bottom: 1px solid rgba(201, 168, 76, 0.1);
   }
 
+  .page-hero { min-height: auto; padding: 118px 1.25rem 56px; }
   .page-hero h1 { font-size: 2rem; }
+  .content-section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .contact-divider-section { padding: 32px 1.25rem !important; }
+  .contact-form-wrap { padding: 0 1.25rem 72px !important; }
+  .contact-block-value a { font-size: 1.55rem; overflow-wrap: anywhere; }
+  .contact-block-note { max-width: 100%; }
+  .contact-form-header { margin-bottom: 2.5rem; }
+  .contact-form-submit { width: 100%; }
   .pillar { grid-template-columns: 1fr; }
   .pillar-num { margin-bottom: 0.3rem; }
   .pillar-desc { grid-column: 1; padding-left: 0; }
@@ -1385,7 +1395,7 @@ footer {
     <div class="contact-grid">
       <div class="contact-block">
         <p class="contact-block-label">Email</p>
-        <p class="contact-block-value"><a href="/cdn-cgi/l/email-protection#a7c4c8c9d3c6c4d3e7c2d6c0c2c9cedf89c4c8ca"><span class="__cf_email__" data-cfemail="16757978627775625673677173787f6e3875797b">[email&#160;protected]</span></a></p>
+        <p class="contact-block-value"><a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a></p>
         <p class="contact-block-note">For general inquiries, partnership discussions, and program information.</p>
       </div>
       <div class="contact-grid-line"></div>
@@ -1403,11 +1413,11 @@ footer {
     </div>
   </section>
 
-  <section style="padding:60px 2rem;background:var(--slate)">
+  <section class="contact-divider-section" style="padding:60px 2rem;background:var(--slate)">
     <div style="width:40px;height:1px;background:var(--gold-dim);margin:0 auto"></div>
   </section>
 
-  <section class="content-section bg-slate" style="padding:0 2rem 100px">
+  <section class="content-section bg-slate contact-form-wrap" style="padding:0 2rem 100px">
     <div class="contact-form-section">
       <div class="contact-form-header">
         <p class="section-label">Submit an Inquiry</p>
@@ -1429,7 +1439,7 @@ footer {
         <div class="full-width" style="display:flex;justify-content:center"><button type="submit" class="contact-form-submit">Submit Inquiry</button></div>
       </form>
       <div class="contact-cta-strip">
-        <p>For nonprofit inquiries related to <a href="https://www.lifeindarkness.org">Life in Darkness</a>, our 501(c)(3), please include that in your message or email us directly at <a href="/cdn-cgi/l/email-protection#482b27263c292b3c082d392f2d262130662b2725"><span class="__cf_email__" data-cfemail="92f1fdfce6f3f1e6d2f7e3f5f7fcfbeabcf1fdff">[email&#160;protected]</span></a>.</p>
+        <p>For nonprofit inquiries related to <a href="https://www.lifeindarkness.org">Life in Darkness</a>, our 501(c)(3), please include that in your message or email us directly at <a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a>.</p>
       </div>
     </div>
   </section>

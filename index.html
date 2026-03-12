@@ -1314,6 +1314,8 @@ footer {
   .nav-links, .nav-inquiry { display: none; }
   .mobile-toggle { display: block; }
 
+  .nav-inner { padding: 0 1.25rem; }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -1322,12 +1324,19 @@ footer {
     left: 0;
     width: 100%;
     background: var(--slate-deep);
-    padding: 1.5rem 2.5rem 2rem;
+    padding: 1.5rem 1.25rem 2rem;
     gap: 1.2rem;
     border-bottom: 1px solid rgba(201, 168, 76, 0.1);
   }
 
+  .page-hero { min-height: auto; padding: 118px 1.25rem 56px; }
   .page-hero h1 { font-size: 2rem; }
+  .trust-assessment-section { padding: 36px 1.25rem !important; }
+  .trust-assessment-inner { grid-template-columns: 1fr !important; gap: 1.75rem !important; }
+  .trust-assessment-divider { width: 100% !important; height: 1px !important; }
+  .trust-card, .assessment-card { padding: 0 !important; }
+  .assessment-card h3 { font-size: 1.9rem !important; }
+  .assessment-card a { width: 100%; text-align: center; }
   .pillar { grid-template-columns: 1fr; }
   .pillar-num { margin-bottom: 0.3rem; }
   .pillar-desc { grid-column: 1; padding-left: 0; }
@@ -1403,10 +1412,10 @@ footer {
   </section>
 
   <!-- BBB Trust + Assessment Promo Row -->
-  <section style="padding:48px 2rem;background:var(--black);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)">
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:center">
+  <section class="trust-assessment-section" style="padding:48px 2rem;background:var(--black);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)">
+    <div class="trust-assessment-inner" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:center">
       <!-- BBB Trust Badge -->
-      <div style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
+      <div class="trust-card" style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
         <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Accredited Member</p>
         <a href="https://www.bbb.org" target="_blank" rel="noopener noreferrer" title="EQGenix Inc. — Better Business Bureau" style="display:inline-flex;align-items:center;gap:1rem;text-decoration:none;padding:14px 20px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);transition:all .3s" onmouseover="this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)'">
           <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business">
@@ -1421,9 +1430,9 @@ footer {
         <p style="font-size:.78rem;color:var(--stone);line-height:1.7;max-width:280px">EQGenix Inc. is committed to upholding the highest standards of trust, transparency, and professional ethics.</p>
       </div>
       <!-- Divider -->
-      <div style="background:rgba(201,168,76,.15);width:1px;height:120px;align-self:center"></div>
+      <div class="trust-assessment-divider" style="background:rgba(201,168,76,.15);width:1px;height:120px;align-self:center"></div>
       <!-- Assessment Promo -->
-      <div id="assessment-promo" style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
+      <div id="assessment-promo" class="assessment-card" style="padding:2rem 3rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem">
         <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Free Assessment</p>
         <h3 style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--white);line-height:1.3">Emotional Wealth<br><em style="color:var(--gold-light)">Diagnostic</em></h3>
         <p style="font-size:.88rem;color:var(--stone-light);line-height:1.75;max-width:300px">Discover your current emotional wealth position. 10 questions. Immediate results with a personalized category.</p>

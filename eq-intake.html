@@ -41,9 +41,9 @@ nav.scrolled{background:rgba(42,45,50,0.97);box-shadow:0 4px 30px rgba(0,0,0,.3)
 .section-rule{width:40px;height:1px;background:var(--gold-dim);margin:0 auto 2rem}
 .content-section{padding:100px 2rem}
 .intake-section{max-width:640px;margin:0 auto}
-.intake-header{text-align:center;margin-bottom:3rem}
-.intake-header h2{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:400;color:var(--white);margin-bottom:1rem}
-.intake-header p{font-size:.95rem;color:var(--stone-light);line-height:1.75}
+.intake-header{text-align:center;margin-bottom:3rem;padding-top:3rem}
+.intake-header h2{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:400;color:var(--white);margin-bottom:.75rem}
+.intake-header p{font-size:.95rem;color:var(--stone-light);line-height:1.75;margin-top:0}
 .intake-block{margin-bottom:3rem}
 .intake-block-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.8rem;padding-bottom:.75rem;border-bottom:1px solid var(--silver-dim)}
 .intake-block-num{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--gold);width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-dim);flex-shrink:0}
@@ -58,10 +58,10 @@ nav.scrolled{background:rgba(42,45,50,0.97);box-shadow:0 4px 30px rgba(0,0,0,.3)
 .intake-form textarea{resize:vertical;min-height:80px}
 .intake-form select option{background:var(--slate);color:var(--silver-bright)}
 .ohnohoney{position:absolute!important;left:-9999px!important;top:-9999px!important;opacity:0!important;height:0!important;width:0!important;overflow:hidden!important;pointer-events:none!important;visibility:hidden!important}
-.field-options{display:flex;flex-direction:column;gap:.75rem;padding-top:6px}
-.field-option{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem .85rem;border:1px solid transparent;transition:border-color .25s ease,background .25s ease}
+.field-options{display:flex;flex-direction:column;gap:.25rem;padding-top:6px}
+.field-option{display:flex;align-items:center;gap:1rem;cursor:pointer;padding:.5rem .85rem;border:1px solid transparent;transition:border-color .25s ease,background .25s ease}
 .field-option:hover{border-color:var(--silver-dim);background:var(--gold-glow)}
-.field-option input[type="radio"],.field-option input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid var(--gold-dim);background:transparent;flex-shrink:0;margin-top:2px;cursor:pointer;position:relative;transition:border-color .2s ease,background .2s ease;padding:0}
+.field-option input[type="radio"],.field-option input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid var(--gold-dim);background:transparent;flex-shrink:0;margin-top:0;margin-right:12px;cursor:pointer;position:relative;transition:border-color .2s ease,background .2s ease;padding:0}
 .field-option input[type="radio"]{border-radius:50%}
 .field-option input[type="radio"]:checked,.field-option input[type="checkbox"]:checked{border-color:var(--gold);background:var(--gold)}
 .field-option input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;width:6px;height:6px;background:var(--dark);border-radius:50%;transform:translate(-50%,-50%)}
@@ -177,7 +177,7 @@ footer{padding:60px 2rem 48px;background:var(--black);color:var(--stone)}
         </div>
 
         <div class="consent-block" id="consent-block">
-          <label class="field-option"><input type="checkbox" id="consent" name="consent" value="yes" required><span class="consent-text">I understand this intake is confidential and will be used to prepare my consultation with Yvonne Hall. I consent to being contacted by EQGenix regarding my session. <a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a></span></label>
+          <label class="field-option"><input type="checkbox" id="consent" name="consent" value="yes" required><span class="consent-text">I understand this intake is confidential and will be used to prepare my consultation with Yvonne Hall. I consent to being contacted by EQGenix regarding my session. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
         </div>
 
         <div class="submit-area">

@@ -321,6 +321,7 @@ nav.scrolled {
 
 .home-hero {
   min-height: 100vh;
+  padding-bottom: 120px;
 }
 
 .home-hero .hero-mark {
@@ -343,7 +344,7 @@ nav.scrolled {
 
 .home-hero .hero-scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: 48px;
   left: 0;
   width: 100%;
   transform: none;
@@ -1311,12 +1312,15 @@ footer {
 }
 
 .trust-col {
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0;
+  max-width: 420px;
 }
+.trust-col:first-child { margin-left: auto; }
+.trust-col:last-child { margin-right: auto; }
 
 .trust-divider {
   background: rgba(201,168,76,.15);
@@ -1341,7 +1345,7 @@ footer {
   .home-previews { grid-template-columns: 1fr; }
   .trust-row { grid-template-columns: 1fr; }
   .trust-divider { display: none; }
-  .trust-col { padding: 2rem 1.25rem; max-width: 100%; align-items: center; text-align: center; }
+  .trust-col { padding: 2rem 1.25rem; max-width: 100%; align-items: center; text-align: center; margin-left: 0; margin-right: 0; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-grid-line { height: 1px; width: 80%; margin: 0 auto; }
   .contact-block { padding: 2.5rem 2rem; }
@@ -1451,31 +1455,31 @@ footer {
   </section>
 
   <!-- BBB Trust + Assessment Promo Row -->
-  <section style="padding:48px 2rem;background:var(--black);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)">
+  <section style="padding:56px 2rem;background:var(--black);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)">
     <div class="trust-row">
       <!-- BBB Trust Badge -->
-      <div class="trust-col">
-        <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Accredited Member</p>
-        <a href="https://www.bbb.org" target="_blank" rel="noopener noreferrer" title="EQGenix Inc. — Better Business Bureau" style="display:inline-flex;align-items:center;gap:1rem;text-decoration:none;padding:14px 20px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);transition:all .3s" onmouseover="this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)'">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business">
+      <div class="trust-col" style="justify-content:center;">
+        <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Accredited Member</p>
+        <a href="https://www.bbb.org" target="_blank" rel="noopener noreferrer" title="EQGenix Inc. — Better Business Bureau" style="display:inline-flex;align-items:center;gap:1.2rem;text-decoration:none;padding:16px 24px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);transition:all .3s;margin-bottom:1.2rem" onmouseover="this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)'">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business">
             <path d="M20 2L24.5 14H38L27.2 21.8L31.8 34L20 26.2L8.2 34L12.8 21.8L2 14H15.5L20 2Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
             <text x="20" y="24" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#c9a84c">BBB</text>
           </svg>
           <div>
-            <p style="font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--gold-light);line-height:1.2">Better Business Bureau</p>
-            <p style="font-family:var(--mono);font-size:.52rem;color:var(--stone);letter-spacing:.06em;margin-top:3px">Accredited Business</p>
+            <p style="font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--gold-light);line-height:1.2">Better Business Bureau</p>
+            <p style="font-family:var(--mono);font-size:.52rem;color:var(--stone);letter-spacing:.06em;margin-top:4px">Accredited Business</p>
           </div>
         </a>
-        <p style="font-size:.78rem;color:var(--stone);line-height:1.7;max-width:280px">EQGenix Inc. is committed to upholding the highest standards of trust, transparency, and professional ethics.</p>
+        <p style="font-size:.78rem;color:var(--stone);line-height:1.75;max-width:300px">EQGenix Inc. is committed to upholding the highest standards of trust, transparency, and professional ethics.</p>
       </div>
       <!-- Divider -->
       <div class="trust-divider"></div>
       <!-- Assessment Promo -->
-      <div id="assessment-promo" class="trust-col">
-        <p style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Free Assessment</p>
-        <h3 style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--white);line-height:1.3">Emotional Wealth<br><em style="color:var(--gold-light)">Diagnostic</em></h3>
-        <p style="font-size:.88rem;color:var(--stone-light);line-height:1.75;max-width:300px">Discover your current emotional wealth position. 10 questions. Immediate results with a personalized category.</p>
-        <a href="assessment.html" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:11px 28px;border:1px solid var(--gold-dim);display:inline-block;transition:all .4s" onmouseover="this.style.borderColor='var(--gold)';this.style.background='rgba(201,168,76,.06)'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)';this.style.background='transparent'">Take the Assessment →</a>
+      <div id="assessment-promo" class="trust-col" style="justify-content:center;">
+        <p style="font-family:var(--mono);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Free Assessment</p>
+        <h3 style="font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.8rem);font-weight:400;color:var(--white);line-height:1.25;margin-bottom:1rem">Emotional Wealth<br><em style="color:var(--gold-light)">Diagnostic</em></h3>
+        <p style="font-size:.88rem;color:var(--stone-light);line-height:1.8;max-width:320px;margin-bottom:1.5rem">Discover your current emotional wealth position. 10 questions. Immediate results with a personalized category.</p>
+        <a href="assessment.html" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:12px 32px;border:1px solid var(--gold-dim);display:inline-block;transition:all .4s" onmouseover="this.style.borderColor='var(--gold)';this.style.background='rgba(201,168,76,.06)'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)';this.style.background='transparent'">Take the Assessment →</a>
       </div>
     </div>
   </section>

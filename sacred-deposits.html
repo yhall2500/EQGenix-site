@@ -1153,6 +1153,94 @@
     }
     .sd-format-dropdown a:last-child { border-bottom: none; }
     .sd-format-dropdown a:hover { background: var(--gold-glow); color: var(--gold-light); }
+
+    /* ─────────────────────────────────────────
+       MOBILE FIX — placed at END of stylesheet so
+       source order wins over the pre-order defaults
+       defined above, and !important beats the inline
+       grid-template-columns on the "Why This Book" cards.
+    ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+
+      /* ── "Why This Book" 3-card grid ──
+         The grid is built with inline styles, so we must use !important
+         and a specific enough selector. Collapse to single column. */
+      #learn > .sd-inner > div[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: 1fr !important;
+        max-width: 560px !important;
+        gap: 1px !important;
+      }
+      .sd-why-card {
+        padding: 2.2rem 1.6rem !important;
+      }
+      .sd-why-card h3 {
+        font-size: 1.1rem !important;
+      }
+      .sd-why-card p {
+        font-size: 0.92rem !important;
+      }
+
+      /* ── Pre-order section ──
+         Default 2-column grid is defined AFTER the media queries in the
+         original stylesheet, so mobile rules need to run later (here) to win. */
+      .sd-preorder-sect {
+        padding: 56px 1.25rem 64px;
+      }
+      .sd-preorder-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 100%;
+      }
+      /* Prevent grid items from blowing out the column — fixes the
+         heading + retailer buttons clipping off the right edge. */
+      .sd-preorder-inner > * {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .sd-preorder-blurb {
+        font-size: 0.95rem;
+      }
+      .sd-preorder-badge {
+        font-size: 1rem;
+        padding: 14px 18px;
+        max-width: 100%;
+      }
+      .sd-preorder-heading {
+        font-size: 1.5rem;
+        line-height: 1.25;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .sd-retailers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 1.5rem;
+      }
+      .sd-retailer-btn {
+        text-align: center;
+        font-size: 0.78rem;
+        padding: 10px 10px;
+        white-space: normal;       /* let long retailer names wrap */
+        line-height: 1.3;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Format row: eBook dropdown already stacks full width, keep contained */
+      .sd-format-row > * { max-width: 100%; }
+      .sd-format-btn { width: 100%; justify-content: space-between; }
+    }
+
+    /* Very small phones (iPhone SE, iPhone 13 mini, etc.) */
+    @media (max-width: 420px) {
+      .sd-retailers { grid-template-columns: 1fr; }
+      .sd-preorder-heading { font-size: 1.35rem; }
+      .sd-why-card h3 { font-size: 1.02rem !important; }
+      .sd-why-card { padding: 1.8rem 1.4rem !important; }
+    }
+    /* ─────── END MOBILE FIX ─────── */
   </style>
 </head>
 

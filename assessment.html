@@ -141,7 +141,22 @@ footer{padding:60px 2rem 48px;background:var(--black);color:var(--stone)}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 *:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-  </style>
+  
+/* ==== Pre-Order Book CTA (added) ==== */
+.nav-ctas{display:flex;align-items:center;gap:.6rem}
+.nav-preorder{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--black,#151719);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:8px 18px;border:1px solid var(--gold);transition:all .3s;font-weight:700;white-space:nowrap}
+.nav-preorder:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,168,76,.25)}
+.nav-mobile-cta{display:none}
+@media(max-width:680px){
+  .nav-ctas{display:none}
+  .nav-links.open .nav-mobile-cta{display:block;margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.12)}
+  .nav-links.open .nav-mobile-cta a{display:inline-block;width:100%;text-align:center}
+  .nav-links.open .nav-mobile-cta.preorder a{background:var(--gold);color:var(--black,#151719);padding:12px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .nav-links.open .nav-mobile-cta.inquire a{padding:10px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);margin-top:.4rem}
+}
+/* ==== end Pre-Order Book CTA ==== */
+
+</style>
 </head>
 <body>
 
@@ -154,8 +169,9 @@ footer{padding:60px 2rem 48px;background:var(--black);color:var(--stone)}
         <li><a href="advisory.html">Advisory</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="principal.html">Principal</a></li>
-      </ul>
-      <a href="contact.html" class="nav-inquiry">Inquire</a>
+        <li><a href="assessment.html" class="active">Diagnostic</a></li>
+      <li class="nav-mobile-cta preorder"><a href="sacred-deposits.html">Pre-Order Book</a></li><li class="nav-mobile-cta inquire"><a href="contact.html">Inquire</a></li></ul>
+      <div class="nav-ctas"><a href="sacred-deposits.html" class="nav-preorder">Pre-Order Book</a><a href="contact.html" class="nav-inquiry">Inquire</a></div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>

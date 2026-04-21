@@ -1337,15 +1337,28 @@ footer {
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
+
+/* ==== Pre-Order Book CTA (added) ==== */
+.nav-ctas{display:flex;align-items:center;gap:.6rem}
+.nav-preorder{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--black,#151719);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:8px 18px;border:1px solid var(--gold);transition:all .3s;font-weight:700;white-space:nowrap}
+.nav-preorder:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,168,76,.25)}
+.nav-mobile-cta{display:none}
+@media(max-width:680px){
+  .nav-ctas{display:none}
+  .nav-links.open .nav-mobile-cta{display:block;margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.12)}
+  .nav-links.open .nav-mobile-cta a{display:inline-block;width:100%;text-align:center}
+  .nav-links.open .nav-mobile-cta.preorder a{background:var(--gold);color:var(--black,#151719);padding:12px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .nav-links.open .nav-mobile-cta.inquire a{padding:10px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);margin-top:.4rem}
+}
+/* ==== end Pre-Order Book CTA ==== */
+
 </style>
 </head>
 <body>
 
   <nav id="mainNav">
     <div class="nav-inner">
-      <a href="https://calendly.com/yhall-eqgenix/eqgenix-consultation-with-yvonne-hall" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1px solid var(--gold);padding:14px 44px;text-decoration:none;display:inline-block;transition:all .4s;opacity:0;animation:fadeUp .7s .4s forwards">Schedule a Consultation</a>
-    <br><br>
-    <a href="index.html" class="nav-brand">EQGenix</a>
+      <a href="index.html" class="nav-brand">EQGenix</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="thesis.html">Thesis</a></li>
         <li><a href="framework.html">Framework</a></li>
@@ -1353,8 +1366,8 @@ footer {
         <li><a href="research.html">Research</a></li>
         <li><a href="principal.html">Principal</a></li>
         <li><a href="assessment.html">Diagnostic</a></li>
-      </ul>
-      <a href="contact.html" class="nav-inquiry">Inquire</a>
+      <li class="nav-mobile-cta preorder"><a href="sacred-deposits.html">Pre-Order Book</a></li><li class="nav-mobile-cta inquire"><a href="contact.html">Inquire</a></li></ul>
+      <div class="nav-ctas"><a href="sacred-deposits.html" class="nav-preorder">Pre-Order Book</a><a href="contact.html" class="nav-inquiry">Inquire</a></div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1376,15 +1389,11 @@ footer {
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <a href="https://calendly.com/yhall-eqgenix/eqgenix-consultation-with-yvonne-hall" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1px solid var(--gold);padding:14px 44px;text-decoration:none;display:inline-block;transition:all .4s;opacity:0;animation:fadeUp .7s .4s forwards">Schedule a Consultation</a>
-    <br><br>
-    <a href="index.html" class="footer-brand">EQGenix Inc.</a>
+          <a href="index.html" class="footer-brand">EQGenix Inc.</a>
           <p class="footer-tagline">Built, Not Downloaded&trade;</p>
         </div>
         <div class="footer-columns">
-          <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="https://calendly.com/yhall-eqgenix/eqgenix-consultation-with-yvonne-hall" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1px solid var(--gold);padding:14px 44px;text-decoration:none;display:inline-block;transition:all .4s;opacity:0;animation:fadeUp .7s .4s forwards">Schedule a Consultation</a>
-    <br><br>
-    <a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
+          <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
           <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div>
           <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a>
           </div>

@@ -1,147 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intake Received — EQGenix</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--slate-deep:#2a2d32;--slate:#353840;--slate-mid:#3f434b;--slate-light:#4a4f59;--gold:#c9a84c;--gold-light:#ddc175;--gold-dim:rgba(201,168,76,0.25);--gold-glow:rgba(201,168,76,0.08);--silver:#a8adb8;--silver-light:#e8eaed;--silver-bright:#f4f3f0;--silver-dim:rgba(168,173,184,0.2);--stone:#6b7280;--stone-light:#8891a0;--white:#ffffff;--dark:#1e2024;--black:#151719;--serif:'Playfair Display',Georgia,serif;--sans:'Outfit',-apple-system,sans-serif;--mono:'Space Mono',monospace}
-html{font-size:17px;scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--slate-deep);color:var(--silver-light);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
-::selection{background:var(--gold);color:var(--black)}
-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;height:68px;display:flex;align-items:center;justify-content:center;background:rgba(42,45,50,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--silver-dim)}
-.nav-inner{width:100%;max-width:1280px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:var(--sans);font-size:1.15rem;font-weight:700;letter-spacing:.1em;color:var(--gold);text-decoration:none;text-transform:uppercase}
-.success{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 2rem 80px;position:relative;background:radial-gradient(ellipse at 50% 40%,var(--slate-mid) 0%,var(--slate-deep) 55%,var(--dark) 100%)}
-.success::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5;pointer-events:none}
-.success__icon{width:56px;height:56px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .1s forwards}
-.success__icon svg{width:24px;height:24px;stroke:var(--gold)}
-.success__title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:var(--white);margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .2s forwards}
-.success__text{font-size:.95rem;color:var(--silver-light);font-weight:300;line-height:1.8;max-width:460px;margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s .35s forwards}
-.success__cta{display:inline-block;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;padding:14px 40px;border:1px solid var(--gold-dim);transition:all .4s;opacity:0;animation:fadeUp .7s .5s forwards}
-.success__cta:hover{border-color:var(--gold);background:var(--gold-glow);color:var(--gold-light)}
-.success__back{display:inline-block;margin-top:1.5rem;font-size:.75rem;color:var(--stone);text-decoration:none;border-bottom:1px solid var(--silver-dim);transition:color .3s;opacity:0;animation:fadeUp .6s .6s forwards}
-.success__back:hover{color:var(--gold)}
-.success__tagline{font-family:var(--serif);font-size:.9rem;font-style:italic;color:var(--gold-dim);margin-top:3rem;opacity:0;animation:fadeUp .6s .7s forwards}
-footer{padding:60px 2rem 48px;background:var(--black);color:var(--stone)}
-.footer-inner{max-width:1080px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(201,168,76,.06)}
-.footer-brand{font-family:var(--sans);font-size:.95rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none}
-.footer-tagline{font-family:var(--mono);font-size:.52rem;color:var(--stone);letter-spacing:.06em;margin-top:4px}
-.footer-columns{display:flex;gap:4rem}
-.footer-col{display:flex;flex-direction:column;gap:.6rem}
-.footer-col-title{font-family:var(--mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:.4rem}
-.footer-col a{font-size:.78rem;font-weight:400;color:var(--stone);text-decoration:none;transition:color .3s}
-.footer-col a:hover{color:var(--gold)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-legal{font-family:var(--mono);font-size:.5rem;color:var(--slate-light);letter-spacing:.04em;max-width:700px;line-height:1.7}
-.footer-nonprofit{font-size:.72rem;color:var(--stone)}
-.footer-nonprofit a{color:var(--gold-dim);text-decoration:none;transition:color .3s}
-.footer-nonprofit a:hover{color:var(--gold)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:680px){.success__cta{width:100%;text-align:center}.footer-top{flex-direction:column;gap:2rem}.footer-columns{flex-direction:column;gap:1.5rem}.footer-bottom{flex-direction:column;align-items:flex-start}}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
-  
-.nav-links { display:flex;align-items:center;gap:2.5rem;list-style:none }
-.nav-links a { font-family:var(--sans);font-size:.78rem;font-weight:400;letter-spacing:.06em;color:var(--silver);text-decoration:none;text-transform:uppercase;transition:color .3s }
-.nav-links a:hover { color:var(--gold-light) }
-.nav-inquiry { font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--gold);text-decoration:none;text-transform:uppercase;padding:8px 20px;border:1px solid var(--gold-dim);transition:all .3s }
-.nav-inquiry:hover { border-color:var(--gold);background:var(--gold-glow) }
-.mobile-toggle { display:none;background:none;border:none;cursor:pointer;width:24px;height:16px;position:relative }
-.mobile-toggle span { display:block;width:100%;height:1px;background:var(--gold);position:absolute;left:0 }
-.mobile-toggle span:nth-child(1) { top:0 }
-.mobile-toggle span:nth-child(2) { top:50% }
-.mobile-toggle span:nth-child(3) { bottom:0 }
-@media(max-width:680px){
-  .nav-links,.nav-inquiry{display:none}
-  .mobile-toggle{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;width:100%;background:var(--slate-deep);padding:1.5rem 1.25rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(201,168,76,0.1);z-index:999}
-}
-
-/* ==== Pre-Order Book CTA (added) ==== */
-.nav-ctas{display:flex;align-items:center;gap:.6rem}
-.nav-preorder{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--black,#151719);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:8px 18px;border:1px solid var(--gold);transition:all .3s;font-weight:700;white-space:nowrap}
-.nav-preorder:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,168,76,.25)}
-.nav-mobile-cta{display:none}
-@media(max-width:680px){
-  .nav-ctas{display:none}
-  .nav-links.open .nav-mobile-cta{display:block;margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.12)}
-  .nav-links.open .nav-mobile-cta a{display:inline-block;width:100%;text-align:center}
-  .nav-links.open .nav-mobile-cta.preorder a{background:var(--gold);color:var(--black,#151719);padding:12px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-  .nav-links.open .nav-mobile-cta.inquire a{padding:10px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);margin-top:.4rem}
-}
-/* ==== end Pre-Order Book CTA ==== */
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inquiry Received | EQGenix</title>
+<meta name="description" content="Your EQGenix inquiry has been submitted successfully.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://eqgenix.com/eq-success.html">
+<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#F3EEE7; color:#26221C; -webkit-font-smoothing:antialiased; font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif; }
+a { color:inherit; text-decoration:none; }
+a:hover { color:#8A6A3E; }
 </style>
 </head>
 <body>
-  <nav id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">EQGenix</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="thesis.html">Thesis</a></li>
-        <li><a href="framework.html">Framework</a></li>
-        <li><a href="advisory.html">Advisory</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="principal.html">Principal</a></li>
-        <li><a href="assessment.html">Diagnostic</a></li>
-      <li class="nav-mobile-cta preorder"><a href="sacred-deposits.html">Order the Book</a></li><li class="nav-mobile-cta inquire"><a href="contact.html">Inquire</a></li></ul>
-      <div class="nav-ctas"><a href="sacred-deposits.html" class="nav-preorder">Order the Book</a><a href="contact.html" class="nav-inquiry">Inquire</a></div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+<header class="eqx-nav">
+  <div class="eqx-nav-bar">
+    <a href="index.html" class="eqx-nav-brand" aria-label="EQGenix home">EQGENIX</a>
+    <div class="eqx-nav-right">
+      <a href="partner.html" class="eqx-nav-partner">PARTNER WITH US</a>
+      <button class="eqx-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="eqx-menu">
+        <span class="eqx-nav-toggle-label">MENU</span>
+        <span class="eqx-nav-burger"><span></span><span></span></span>
       </button>
     </div>
-  </nav>
-
-  <main class="success">
-    <div class="success__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-    <h1 class="success__title">Intake Received.</h1>
-    <p class="success__text">Thank you. Your responses have been submitted and Yvonne will review them before your session. The next step is to select a time that works for you.</p>
-    <a href="https://calendly.com/yhall-eqgenix/eqgenix-consultation-with-yvonne-hall" class="success__cta" target="_blank" rel="noopener noreferrer">Schedule Your Consultation</a>
-    <a href="index.html" class="success__back">Return to EQGenix</a>
-    <p class="success__tagline">Built, Not Downloaded.&#8482;</p>
-  </main>
-
-  <footer><div class="footer-inner"><div class="footer-top"><div><a href="index.html" class="footer-brand">EQGenix Inc.</a><p class="footer-tagline">Built, Not Downloaded&#8482;</p></div><div class="footer-columns"><div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div><div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div><div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a>
-          </div></div></div>
-      <div class="footer-bottom"><span class="footer-legal">&#169; EQGenix Inc. All rights reserved. Built, Not Downloaded&#8482;, Emotional Portfolio&#8482;, Mission-Ready Civilian&#8482;, ASCEND&#8482;, Grit to Genius&#8482;, Mentor to Men&#8482;, and The Sovereign Workforce Program&#8482; are trademarks of EQGenix Inc.</span><span class="footer-nonprofit">Advisory work supports <a href="https://www.lifeindarkness.org">Life in Darkness</a>, a 501(c)(3).</span></div></div></footer>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var nav = document.getElementById('mainNav');
-    if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
-    var toggle = document.getElementById('mobileToggle');
-    var links = document.getElementById('navLinks');
-    if (toggle && links) {
-      toggle.setAttribute('aria-expanded','false');
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault(); e.stopPropagation();
-        var open = links.classList.contains('open');
-        links.classList.toggle('open', !open);
-        toggle.setAttribute('aria-expanded', String(!open));
-        document.body.style.overflow = open ? '' : 'hidden';
-      });
-      links.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function() {
-          links.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-          document.body.style.overflow = '';
-        });
-      });
-      document.addEventListener('click', function(e) {
-        if (!links.classList.contains('open')) return;
-        if (!links.contains(e.target) && !toggle.contains(e.target)) {
-          links.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-  });
-  </script>
+  </div>
+  <div class="eqx-nav-ov" id="eqx-menu" hidden>
+    <div class="eqx-nav-ov-bar">
+      <a href="index.html" class="eqx-nav-brand light">EQGENIX</a>
+      <button class="eqx-nav-close" aria-label="Close menu">CLOSE&nbsp;&times;</button>
+    </div>
+    <div class="eqx-nav-ov-grid">
+      <nav class="eqx-nav-main" aria-label="Primary">
+        <a href="about.html" data-key="about"><em>01</em><span>About</span></a>
+        <a href="methodology.html" data-key="method"><em>02</em><span>Methodology</span></a>
+        <a href="impact.html" data-key="impact"><em>03</em><span>Impact</span></a>
+        <a href="research.html" data-key="research"><em>04</em><span>Insights</span></a>
+        <a href="assessment.html" data-key="diagnostic"><em>05</em><span>EWD-1&trade; Diagnostic</span></a>
+      </nav>
+      <div>
+        <div class="eqx-nav-inits-label">INITIATIVES</div>
+        <nav class="eqx-nav-inits" aria-label="Initiatives">
+          <a href="grit-to-genius.html" data-ovbg="#141A10"><small style="color:#C09B62;">K&ndash;12 FORMATION</small><span>Grit to Genius&trade;</span></a>
+          <a href="sovereign-shield.html" data-ovbg="#10161F"><small style="color:#8FA3B5;">LAW ENFORCEMENT</small><span>Sovereign Shield&trade;</span></a>
+          <a href="sovereign-station.html" data-ovbg="#1C130C"><small style="color:#C09578;">FIRE SERVICE</small><span>Sovereign Station&trade;</span></a>
+          <a href="sacred-deposits.html" data-ovbg="#1D1213"><small style="color:#B57E82;">MARRIAGE FORMATION &middot; AVAILABLE NOW</small><span>Sacred Deposits&trade;</span></a>
+          <a href="life-in-darkness.html" data-ovbg="#12101A"><small style="color:#9B93B6;">NONPROFIT &middot; 501(c)(3)</small><span>Life in Darkness</span></a>
+          <a href="mission-ready-civilian.html" data-ovbg="#12150C"><small style="color:#A8AE8C;">VETERAN TRANSITION</small><span>Mission-Ready Civilian&trade;</span></a>
+        </nav>
+        <a href="partner.html" class="eqx-nav-partner-btn">PARTNER WITH US</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+<section style="max-width:880px; margin:0 auto; padding:10vh 48px 20vh; text-align:center;">
+  <span aria-hidden="true" style="display:inline-block; width:11px; height:11px; background:#8A6A3E; transform:rotate(45deg);"></span>
+  <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#A2977F; margin-top:4vh;">EQGENIX · INQUIRY</div>
+  <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(36px,4vw,64px); line-height:1.1; margin:3vh auto 0;">Thank you for your submission.</h1>
+  <p id="eq-done-body" style="font-size:15px; line-height:1.9; color:#6E6455; margin:4vh auto 0; max-width:520px; text-wrap:pretty;">Your inquiry has been received and is in front of the right person. If anything is time-sensitive, call <a href="tel:+18888247244" style="color:#8A6A3E;">888-824-7244</a> during business hours.</p>
+  <div style="display:flex; justify-content:center; align-items:center; gap:40px; margin-top:7vh; flex-wrap:wrap;">
+    <a href="index.html" style="background:#191713; color:#F3EEE7; font-size:14px; font-weight:600; letter-spacing:0.22em; padding:17px 34px;">Return to EQGenix</a>
+    <a href="methodology.html" style="font-size:14px; font-weight:600; letter-spacing:0.22em; color:#8A6A3E; border-bottom:1px solid #DCD6C6; padding-bottom:7px;">Explore the Methodology →</a>
+  </div>
+</section>
+</main>
+<footer class="eqx-footer">
+  <div class="eqx-footer-hero">
+    <div class="eqx-footer-kicker">EQGENIX</div>
+    <div class="eqx-footer-title">Built, Not Downloaded.&trade;</div>
+    <p class="eqx-footer-sub">EQGenix develops the human capacities that compound over a lifetime. We advise individuals, families, and institutions on building the portfolio that matters most.</p>
+    <a href="contact.html" class="eqx-footer-cta">START A CONVERSATION</a>
+  </div>
+  <div class="eqx-footer-mid">
+    <div class="eqx-footer-cols">
+      <div>
+        <a href="index.html" class="eqx-footer-brand"><img src="assets/images/eqg-logo.png" alt="" width="42" height="42" loading="lazy">EQGENIX</a>
+        <p class="eqx-footer-tag">Emotional &amp; Cognitive Wealth Advisors.<br>BBB Accredited Business.</p>
+        <div class="eqx-footer-contact">
+          <a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a>
+          <a href="tel:+18888247244">888-824-7244</a>
+        </div>
+      </div>
+      <div>
+        <div class="eqx-footer-col-title">NAVIGATE</div>
+        <div class="eqx-footer-links">
+          <a href="grit-to-genius.html">Grit to Genius&trade;</a>
+          <a href="sovereign-shield.html">Sovereign Shield&trade;</a>
+          <a href="sovereign-station.html">Sovereign Station&trade;</a>
+          <a href="sacred-deposits.html">Sacred Deposits&trade;</a>
+          <a href="public-safety.html">Public Safety overview</a>
+        </div>
+      </div>
+      <div>
+        <div class="eqx-footer-col-title">EXPLORE</div>
+        <div class="eqx-footer-links">
+          <a href="about.html">About</a>
+          <a href="impact.html">Impact</a>
+          <a href="methodology.html">Methodology</a>
+          <a href="assessment.html">EWD-1&trade; Assessment</a>
+          <a href="genius-capacity-index.html">Genius Capacity Index&trade;</a>
+          <a href="research.html">Research &amp; publications</a>
+        </div>
+      </div>
+      <div>
+        <div class="eqx-footer-col-title">CONNECT</div>
+        <div class="eqx-footer-links">
+          <a href="partner.html">Partnership</a>
+          <a href="contact.html">Contact</a>
+          <a href="careers.html">Careers</a>
+          <a href="privacy.html">Privacy policy</a><a href="policies.html">Site policies & terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="eqx-footer-legal">
+    <div class="eqx-footer-legal-grid">
+      <p>&copy; EQGenix Inc. All rights reserved. Built, Not Downloaded&trade;, Emotional Portfolio&trade;, Mission-Ready Civilian&trade;, ASCEND&trade;, Grit to Genius&trade;, Mentor to Men&trade;, The Sovereign Workforce Program&trade;, Sovereign Shield&trade;, Sacred Deposits&trade;, Sacred Union Set&trade;, and Subsidizing Absence&trade; are trademarks of EQGenix Inc.</p>
+      <p class="eqx-footer-lid">Advisory work supports <a href="https://www.lifeindarkness.org" target="_blank" rel="noopener noreferrer">Life in Darkness</a>, a 501(c)(3).</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/global.js" defer></script>
+<script>
+(function(){
+  var p = (new URLSearchParams(location.search)).get("program");
+  var el = document.getElementById("eq-done-body");
+  if (p === "g2g" && el) el.innerHTML = 'Your pre-registration for the Fall 2026 founding cohort has been received. We will notify your family as soon as the cohort schedule is set. If anything is time-sensitive, call <a href="tel:+18888247244" style="color:#8A6A3E;">888-824-7244</a>.';
+})();
+</script>
 </body>
 </html>

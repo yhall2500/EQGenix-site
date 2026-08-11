@@ -1,1704 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EQGenix — Emotional &amp; Cognitive Wealth Advisors</title>
-  <meta name="description" content="EQGenix develops the human capacities that compound over a lifetime. Emotional and cognitive wealth advisory for individuals, families, and institutions.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-/* ═══════════════════════════════════════════════════
-   EQGenix — Emotional & Cognitive Wealth Advisors
-   Global Stylesheet
-   ═══════════════════════════════════════════════════ */
-
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  /* Slate spectrum */
-  --slate-deep: #2a2d32;
-  --slate: #353840;
-  --slate-mid: #3f434b;
-  --slate-light: #4a4f59;
-
-  /* Gold spectrum */
-  --gold: #c9a84c;
-  --gold-light: #ddc175;
-  --gold-pale: #e8d59e;
-  --gold-dim: rgba(201, 168, 76, 0.25);
-  --gold-glow: rgba(201, 168, 76, 0.08);
-
-  /* Silver spectrum */
-  --silver: #a8adb8;
-  --silver-light: #c5c9d1;
-  --silver-bright: #dcdfe5;
-  --silver-dim: rgba(168, 173, 184, 0.2);
-
-  /* Stone */
-  --stone: #6b7280;
-  --stone-light: #8891a0;
-
-  /* Neutrals */
-  --white: #f4f3f0;
-  --off-white: #eae8e3;
-  --cream: #e0ddd6;
-  --dark: #1e2024;
-  --black: #151719;
-  --charcoal: #1a1a1a;
-
-  /* Rules */
-  --rule: #b09060;
-  --rule-muted: rgba(176, 144, 96, 0.4);
-
-  /* Typography */
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans: 'Outfit', -apple-system, sans-serif;
-  --mono: 'Space Mono', monospace;
-}
-
-html {
-  font-size: 17px;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--sans);
-  background: var(--slate-deep);
-  color: var(--silver-light);
-  line-height: 1.65;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-::selection {
-  background: var(--gold);
-  color: var(--black);
-}
-
-
-/* ═══════════════════════════════════════════
-   NAVIGATION
-   ═══════════════════════════════════════════ */
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(42, 45, 50, 0.92);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-  transition: all 0.3s;
-}
-
-nav.scrolled {
-  background: rgba(42, 45, 50, 0.97);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-brand {
-  font-family: var(--sans);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-brand:hover {
-  color: var(--gold-light);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--silver);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.4s ease;
-}
-
-.nav-links a:hover {
-  color: var(--gold-light);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links a.active {
-  color: var(--gold-light);
-}
-
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-inquiry {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  color: var(--gold);
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 8px 20px;
-  border: 1px solid var(--gold-dim);
-  transition: all 0.3s;
-}
-
-.nav-inquiry:hover {
-  border-color: var(--gold);
-  background: var(--gold-glow);
-}
-
-.nav-inquiry.active {
-  border-color: var(--gold);
-  color: var(--gold-light);
-}
-
-.mobile-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 24px;
-  height: 16px;
-  position: relative;
-}
-
-.mobile-toggle span {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--gold);
-  position: absolute;
-  left: 0;
-  transition: all 0.3s;
-}
-
-.mobile-toggle span:nth-child(1) { top: 0; }
-.mobile-toggle span:nth-child(2) { top: 50%; }
-.mobile-toggle span:nth-child(3) { bottom: 0; }
-
-
-/* ═══════════════════════════════════════════
-   PAGE HERO
-   ═══════════════════════════════════════════ */
-
-.page-hero {
-  min-height: 45vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 140px 2rem 80px;
-  position: relative;
-  background: radial-gradient(ellipse at 50% 40%, var(--slate-mid) 0%, var(--slate-deep) 55%, var(--dark) 100%);
-}
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.page-hero-brand {
-  font-family: var(--sans);
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.6s 0.02s forwards;
-}
-
-.page-hero-rule {
-  width: 50px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 auto 2rem;
-  opacity: 0;
-  animation: fadeUp 0.6s 0.05s forwards;
-}
-
-.page-hero-label {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.1s forwards;
-}
-
-.page-hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--white);
-  max-width: 780px;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.2s forwards;
-}
-
-.page-hero h1 em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.page-hero-sub {
-  font-size: 1.05rem;
-  font-weight: 300;
-  color: var(--silver);
-  max-width: 560px;
-  line-height: 1.8;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.35s forwards;
-}
-
-
-/* ═══════════════════════════════════════════
-   HOME HERO
-   ═══════════════════════════════════════════ */
-
-.home-hero {
-  min-height: 100vh;
-  padding-bottom: 120px;
-}
-
-.home-hero .hero-mark {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(201, 168, 76, 0.7);
-  margin-top: 3rem;
-  padding: 0;
-  border: none;
-  width: 100%;
-  display: block;
-  text-align: center;
-  position: relative;
-  left: 0;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.5s forwards;
-}
-
-.home-hero .hero-scroll {
-  position: absolute;
-  bottom: 48px;
-  left: 0;
-  width: 100%;
-  transform: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-  opacity: 0;
-  animation: fadeUp 0.6s 0.8s forwards;
-}
-
-.home-hero .hero-scroll .tick {
-  width: 1px;
-  height: 28px;
-  background: linear-gradient(to bottom, var(--gold-dim), transparent);
-  animation: scrollPulse 2.5s ease-in-out infinite;
-}
-
-.home-hero .hero-scroll span {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-
-/* ═══════════════════════════════════════════
-   SHARED ELEMENTS
-   ═══════════════════════════════════════════ */
-
-.section-label {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-}
-
-.section-rule {
-  width: 40px;
-  height: 1px;
-  background: var(--gold-dim);
-  margin: 0 auto 2rem;
-}
-
-.content-section {
-  padding: 100px 2rem;
-}
-
-.content-section.bg-dark { background: var(--dark); }
-.content-section.bg-slate { background: var(--slate); }
-.content-section.bg-slate-deep { background: var(--slate-deep); }
-
-
-/* ═══════════════════════════════════════════
-   HOME PREVIEW GRID
-   ═══════════════════════════════════════════ */
-
-.home-previews {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(201, 168, 76, 0.3);
-}
-
-.home-preview {
-  padding: 3rem 2.5rem 2.5rem;
-  background: var(--dark);
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-}
-
-.home-preview::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), rgba(201, 168, 76, 0.2));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-}
-
-.home-preview:hover::before {
-  transform: scaleX(1);
-}
-
-.home-preview::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.04) 0%, transparent 40%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.home-preview:hover::after {
-  opacity: 1;
-}
-
-.home-preview:hover {
-  background: var(--charcoal);
-}
-
-.home-preview .section-label {
-  margin-bottom: 0.6rem;
-  font-size: 0.5rem;
-  transition: color 0.3s;
-}
-
-.home-preview:hover .section-label {
-  color: var(--gold-light);
-}
-
-.home-preview h3 {
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 500;
-  color: var(--silver-bright);
-  line-height: 1.3;
-  margin-bottom: 1.2rem;
-  transition: color 0.4s;
-}
-
-.home-preview:hover h3 {
-  color: var(--white);
-}
-
-.home-preview p {
-  font-size: 0.88rem;
-  color: var(--stone);
-  line-height: 1.75;
-  flex-grow: 1;
-}
-
-.home-preview .arrow {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--gold-dim);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.4s;
-}
-
-.home-preview:hover .arrow {
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-
-/* ═══════════════════════════════════════════
-   EVIDENCE STRIP
-   ═══════════════════════════════════════════ */
-
-.evidence {
-  padding: 56px 2rem;
-  background: var(--black);
-  border-top: 1px solid rgba(201, 168, 76, 0.1);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-}
-
-.evidence-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-}
-
-.evidence-item {
-  padding: 1.5rem 2rem;
-}
-
-.evidence-stat {
-  font-family: var(--serif);
-  font-size: 2.6rem;
-  font-weight: 400;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 0.6rem;
-}
-
-.evidence-label {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--stone);
-  line-height: 1.6;
-}
-
-
-/* ═══════════════════════════════════════════
-   THESIS
-   ═══════════════════════════════════════════ */
-
-.thesis-inner {
-  max-width: 780px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.thesis-heading {
-  font-family: var(--serif);
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--white);
-  margin-bottom: 3rem;
-}
-
-.thesis-rule {
-  width: 36px;
-  height: 1px;
-  background: var(--gold-dim);
-  margin: 0 auto 3rem;
-}
-
-.thesis-text {
-  font-size: 1.02rem;
-  line-height: 2;
-  color: var(--silver);
-  font-weight: 300;
-  text-align: left;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.thesis-text p + p {
-  margin-top: 1.4rem;
-}
-
-.thesis-text strong {
-  color: var(--gold-light);
-  font-weight: 500;
-}
-
-.thesis-pullquote {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--gold-pale);
-  line-height: 1.6;
-  max-width: 580px;
-  margin: 3.5rem auto 0;
-  text-align: center;
-  position: relative;
-  padding: 2rem 0;
-}
-
-.thesis-pullquote::before,
-.thesis-pullquote::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  height: 1px;
-  background: var(--gold-dim);
-}
-
-.thesis-pullquote::before { top: 0; }
-.thesis-pullquote::after { bottom: 0; }
-
-
-/* ═══════════════════════════════════════════
-   FRAMEWORK — PILLARS
-   ═══════════════════════════════════════════ */
-
-.framework-header {
-  max-width: 680px;
-  margin: 0 auto 5rem;
-  text-align: center;
-}
-
-.framework-header h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.framework-header p {
-  font-size: 1rem;
-  color: var(--silver);
-  line-height: 1.8;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.pillars {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--silver-dim);
-}
-
-.pillar {
-  display: grid;
-  grid-template-columns: 80px 240px 1fr;
-  padding: 2.2rem 0;
-  border-bottom: 1px solid var(--silver-dim);
-  align-items: baseline;
-  transition: all 0.4s;
-}
-
-.pillar:hover {
-  background: var(--gold-glow);
-  margin: 0 -2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.pillar-num {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--gold-dim);
-  letter-spacing: 0.08em;
-}
-
-.pillar:hover .pillar-num { color: var(--gold); }
-
-.pillar-name {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--silver-bright);
-  line-height: 1.35;
-  transition: color 0.3s;
-}
-
-.pillar:hover .pillar-name { color: var(--gold-light); }
-
-.pillar-desc {
-  font-size: 0.92rem;
-  color: var(--stone-light);
-  line-height: 1.75;
-  font-weight: 300;
-  padding-left: 2rem;
-}
-
-.pillar-deep {
-  max-width: 780px;
-  margin: 4rem auto 0;
-}
-
-.pillar-deep-item {
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--silver-dim);
-}
-
-.pillar-deep-item:first-child {
-  border-top: 1px solid var(--silver-dim);
-}
-
-.pillar-deep-item h3 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--gold-light);
-  margin-bottom: 0.5rem;
-}
-
-.pillar-deep-item .pillar-num {
-  display: block;
-  margin-bottom: 0.8rem;
-}
-
-.pillar-deep-item p {
-  font-size: 0.98rem;
-  color: var(--silver);
-  line-height: 1.9;
-  font-weight: 300;
-  margin-top: 1rem;
-}
-
-
-/* ═══════════════════════════════════════════
-   PROGRAMS / ADVISORY
-   ═══════════════════════════════════════════ */
-
-.programs-header {
-  max-width: 680px;
-  margin: 0 auto 5rem;
-  text-align: center;
-}
-
-.programs-header h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.programs-header p {
-  font-size: 1rem;
-  color: var(--silver);
-  line-height: 1.8;
-  max-width: 540px;
-  margin: 0 auto;
-}
-
-.program-list {
-  max-width: 920px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.program-item {
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem;
-  border: 1px solid rgba(201, 168, 76, 0.12);
-  background: rgba(53, 56, 64, 0.5);
-  transition: all 0.4s;
-}
-
-.program-item:hover {
-  border-color: rgba(201, 168, 76, 0.3);
-  background: rgba(201, 168, 76, 0.04);
-}
-
-.program-type {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-}
-
-.program-name {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.3;
-  margin-bottom: 0.3rem;
-}
-
-.program-tm {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  color: var(--stone);
-  letter-spacing: 0.06em;
-}
-
-.program-meta {
-  display: flex;
-  gap: 2.5rem;
-  margin-top: 1.2rem;
-}
-
-.program-meta dt {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 2px;
-}
-
-.program-meta dd {
-  font-size: 0.88rem;
-  color: var(--silver-bright);
-  font-weight: 500;
-}
-
-.program-body {
-  font-size: 0.95rem;
-  color: var(--silver);
-  line-height: 1.85;
-  font-weight: 300;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--silver-dim);
-}
-
-
-/* ═══════════════════════════════════════════
-   ARTICLES / RESEARCH
-   ═══════════════════════════════════════════ */
-
-.articles {
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.article {
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--silver-dim);
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.article:first-child {
-  border-top: 1px solid var(--silver-dim);
-}
-
-.article:hover {
-  background: var(--gold-glow);
-  margin: 0 -2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.article-category {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-  display: block;
-}
-
-.article-title {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--silver-bright);
-  line-height: 1.4;
-  margin-bottom: 0.8rem;
-  transition: color 0.3s;
-}
-
-.article:hover .article-title {
-  color: var(--gold-light);
-}
-
-.article-excerpt {
-  font-size: 0.9rem;
-  color: var(--stone-light);
-  line-height: 1.75;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-/* ═══════════════════════════════════════════
-   ABOUT / PRINCIPAL
-   ═══════════════════════════════════════════ */
-
-.about-header {
-  max-width: 680px;
-  margin: 0 auto 3rem;
-  text-align: center;
-}
-
-.about-header h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 0.4rem;
-}
-
-.about-header .role {
-  font-size: 0.9rem;
-  color: var(--gold);
-  font-weight: 400;
-}
-
-.credentials {
-  max-width: 640px;
-  margin: 0 auto 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--silver-dim);
-}
-
-.credential {
-  padding: 1.2rem 1rem;
-  border-bottom: 1px solid var(--silver-dim);
-}
-
-.credential dt {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  margin-bottom: 4px;
-}
-
-.credential dd {
-  font-size: 0.88rem;
-  color: var(--silver-light);
-  font-weight: 300;
-  line-height: 1.5;
-}
-
-.about-text {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.about-text p {
-  font-size: 1rem;
-  color: var(--silver);
-  line-height: 1.95;
-  font-weight: 300;
-}
-
-.about-text p + p {
-  margin-top: 1.4rem;
-}
-
-
-/* ═══════════════════════════════════════════
-   CONTACT PAGE
-   ═══════════════════════════════════════════ */
-
-.contact-grid {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 0;
-  min-height: 30vh;
-}
-
-.contact-grid-line {
-  background: rgba(201, 168, 76, 0.2);
-}
-
-.contact-block {
-  padding: 4rem 3.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contact-block-label {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-}
-
-.contact-block-value {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--silver-bright);
-  line-height: 1.3;
-  margin-bottom: 0.6rem;
-}
-
-.contact-block-value a {
-  color: var(--silver-bright);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-block-value a:hover {
-  color: var(--gold-light);
-}
-
-.contact-block-note {
-  font-size: 0.88rem;
-  color: var(--stone-light);
-  line-height: 1.7;
-  margin-top: 0.5rem;
-}
-
-.contact-form-section {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.contact-form-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.contact-form-header h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 1rem;
-}
-
-.contact-form-header p {
-  font-size: 0.95rem;
-  color: var(--stone-light);
-  line-height: 1.75;
-}
-
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 2rem;
-}
-
-.contact-form .full-width {
-  grid-column: 1 / -1;
-}
-
-.contact-form label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100%;
-  padding: 12px 0;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--silver-bright);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--silver-bright);
-  outline: none;
-  transition: border-color 0.3s;
-  border-radius: 0;
-  -webkit-appearance: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-  border-bottom-color: var(--gold-light);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-form select option {
-  background: var(--slate);
-  color: var(--silver-bright);
-}
-
-.contact-form-submit {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  padding: 14px 40px;
-  cursor: pointer;
-  transition: all 0.4s;
-  margin-top: 1rem;
-}
-
-.contact-form-submit:hover {
-  border-color: var(--gold);
-  background: rgba(201, 168, 76, 0.08);
-  color: var(--gold-light);
-}
-
-.contact-cta-strip {
-  max-width: 640px;
-  margin: 3rem auto 0;
-  text-align: center;
-  padding-top: 3rem;
-  border-top: 1px solid var(--silver-dim);
-}
-
-.contact-cta-strip p {
-  font-size: 0.85rem;
-  color: var(--stone);
-  line-height: 1.7;
-}
-
-.contact-cta-strip a {
-  color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid var(--gold-dim);
-  transition: border-color 0.3s;
-}
-
-.contact-cta-strip a:hover {
-  border-color: var(--gold);
-}
-
-
-/* ═══════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════ */
-
-footer {
-  padding: 60px 2rem 48px;
-  background: var(--black);
-  color: var(--stone);
-}
-
-.footer-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.06);
-}
-
-.footer-brand {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.footer-tagline {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  color: var(--stone);
-  letter-spacing: 0.06em;
-  margin-top: 4px;
-}
-
-.footer-columns {
-  display: flex;
-  gap: 4rem;
-}
-
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.footer-col-title {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  margin-bottom: 0.4rem;
-}
-
-.footer-col a {
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--stone);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-col a:hover {
-  color: var(--gold);
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-legal {
-  font-family: var(--mono);
-  font-size: 0.5rem;
-  color: var(--slate-light);
-  letter-spacing: 0.04em;
-  max-width: 700px;
-  line-height: 1.7;
-}
-
-.footer-nonprofit {
-  font-size: 0.72rem;
-  color: var(--stone);
-}
-
-.footer-nonprofit a {
-  color: var(--gold-dim);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-nonprofit a:hover {
-  color: var(--gold);
-}
-
-
-/* ═══════════════════════════════════════════
-   ANIMATIONS
-   ═══════════════════════════════════════════ */
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* ═══════════════════════════════════════════
-   TRUST ROW (BBB + Assessment)
-   ═══════════════════════════════════════════ */
-.trust-section {
-  padding: 56px 2rem;
-  background: var(--black);
-  border-top: 1px solid rgba(201,168,76,.08);
-  border-bottom: 1px solid rgba(201,168,76,.08);
-}
-.trust-row {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 0;
-  align-items: center;
-}
-.trust-col {
-  padding: 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 440px;
-}
-.trust-col:first-child { margin-left: auto; }
-.trust-col:last-child { margin-right: auto; }
-.trust-divider {
-  background: rgba(201,168,76,.15);
-  width: 1px;
-  height: 120px;
-  align-self: center;
-}
-.trust-label {
-  font-family: var(--mono);
-  font-size: .52rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: .65rem;
-}
-.trust-bbb-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.2rem;
-  text-decoration: none;
-  padding: 14px 20px;
-  border: 1px solid rgba(201,168,76,.2);
-  background: rgba(201,168,76,.03);
-  transition: all .3s;
-  margin-bottom: 1rem;
-}
-.trust-bbb-name {
-  font-family: var(--sans);
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--gold-light);
-  line-height: 1.2;
-}
-.trust-bbb-sub {
-  font-family: var(--mono);
-  font-size: .52rem;
-  color: var(--stone);
-  letter-spacing: .06em;
-  margin-top: 4px;
-}
-.trust-heading {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem,2vw,1.8rem);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: .85rem;
-}
-.trust-heading em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-.trust-body {
-  font-size: .85rem;
-  color: var(--stone-light);
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
-  max-width: 300px;
-}
-.trust-cta {
-  font-family: var(--mono);
-  font-size: .62rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  padding: 11px 28px;
-  border: 1px solid var(--gold-dim);
-  display: inline-block;
-  transition: all .4s;
-}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════ */
-
-@media (max-width: 900px) {
-  html { font-size: 16px; }
-  .pillar { grid-template-columns: 60px 1fr; }
-  .pillar-desc { grid-column: 2; padding-left: 0; margin-top: 0.3rem; }
-  .pillar:hover { margin: 0; padding-left: 0; padding-right: 0; }
-  .program-list { grid-template-columns: 1fr; }
-  .evidence-inner { grid-template-columns: repeat(2, 1fr); }
-  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .credentials { grid-template-columns: 1fr; }
-  .home-previews { grid-template-columns: 1fr; }
-  .trust-row { grid-template-columns: 1fr; }
-  .trust-divider { display: none; }
-  .trust-section { padding: 28px 1.25rem !important; }
-  .trust-col { padding: 16px 1rem; max-width: 100%; align-items: center; text-align: center; margin-left: 0 !important; margin-right: 0 !important; }
-  .trust-col + .trust-col { border-top: 1px solid rgba(201,168,76,0.1); margin-top: 0; }
-  .trust-label { margin-bottom: .4rem; }
-  .trust-bbb-badge { margin-bottom: .6rem; padding: 10px 16px; }
-  .trust-body { margin-bottom: .75rem; max-width: 100%; }
-  .trust-heading { margin-bottom: .6rem; }
-  .trust-cta { padding: 9px 22px; }
-  .evidence { padding: 32px 1.25rem !important; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-grid-line { height: 1px; width: 80%; margin: 0 auto; }
-  .contact-block { padding: 2.5rem 2rem; }
-  .contact-form { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 680px) {
-  .nav-links, .nav-inquiry { display: none; }
-  .mobile-toggle { display: block; }
-
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 68px;
-    left: 0;
-    width: 100%;
-    background: var(--slate-deep);
-    padding: 1.5rem 2.5rem 2rem;
-    gap: 1.2rem;
-    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-  }
-
-  .page-hero h1 { font-size: 2rem; }
-  .pillar { grid-template-columns: 1fr; }
-  .pillar-num { margin-bottom: 0.3rem; }
-  .pillar-desc { grid-column: 1; padding-left: 0; }
-  .article:hover, .pillar:hover { margin: 0; padding-left: 0; padding-right: 0; }
-  .evidence-inner { grid-template-columns: 1fr 1fr; }
-  .footer-top { flex-direction: column; gap: 2rem; }
-  .footer-columns { flex-direction: column; gap: 1.5rem; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-}
-
-
-.hero-book-btn:hover {
-  background: var(--gold-light) !important;
-  border-color: var(--gold-light) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(201,168,76,.25);
-}
-
-/* ==== Pre-Order Book CTA (added) ==== */
-.nav-ctas{display:flex;align-items:center;gap:.6rem}
-.nav-preorder{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;color:var(--black,#151719);background:var(--gold);text-decoration:none;text-transform:uppercase;padding:8px 18px;border:1px solid var(--gold);transition:all .3s;font-weight:700;white-space:nowrap}
-.nav-preorder:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 14px rgba(201,168,76,.25)}
-.nav-mobile-cta{display:none}
-@media(max-width:680px){
-  .nav-ctas{display:none}
-  .nav-links.open .nav-mobile-cta{display:block;margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.12)}
-  .nav-links.open .nav-mobile-cta a{display:inline-block;width:100%;text-align:center}
-  .nav-links.open .nav-mobile-cta.preorder a{background:var(--gold);color:var(--black,#151719);padding:12px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-  .nav-links.open .nav-mobile-cta.inquire a{padding:10px 20px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);margin-top:.4rem}
-}
-/* ==== end Pre-Order Book CTA ==== */
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EQGenix Inc. | The Emotional Wealth Company</title>
+<meta name="description" content="EQGenix develops the human capacities that compound over a lifetime — advising individuals, families, and institutions on emotional and cognitive wealth.">
+<link rel="canonical" href="https://eqgenix.com/">
+<meta property="og:title" content="EQGenix Inc. | The Emotional Wealth Company">
+<meta property="og:description" content="EQGenix develops the human capacities that compound over a lifetime — advising individuals, families, and institutions on emotional and cognitive wealth.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eqgenix.com/">
+<meta property="og:image" content="https://eqgenix.com/assets/images/eqg-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EQGenix Inc. | The Emotional Wealth Company">
+<meta name="twitter:description" content="EQGenix develops the human capacities that compound over a lifetime — advising individuals, families, and institutions on emotional and cognitive wealth.">
+<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/global.css">
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#F3EEE7; color:#26221C; -webkit-font-smoothing:antialiased; }
+a { color:#26221C; text-decoration:none; }
+a:hover { color:#8A6A3E; }
+::selection { background:#DCD2BC; }
+/* hover states */
+.pg-hv1:hover { background:#8A6A3E; color:#F3EEE7; }
+.pg-hv2:hover { color:#8A6A3E; }
+.pg-hv3:hover { color:#8A6A3E; }
+.pg-hv4:hover { color:#8A6A3E; }
+.pg-hv5:hover { transform:scale(1.03); }
+.pg-hv6:hover { transform:scale(1.03); }
+.pg-hv7:hover { transform:scale(1.03); }
+.pg-hv8:hover { transform:scale(1.03); }
+.pg-hv9:hover { transform:scale(1.03); }
+.pg-hv10:hover { transform:scale(1.03); }
+.pg-hv11:hover { padding-left:22px; color:#C49B62; }
+.pg-hv12:hover { padding-left:22px; color:#C49B62; }
+.pg-hv13:hover { padding-left:22px; color:#C49B62; }
+.pg-hv14:hover { padding-left:22px; color:#C49B62; }
+.pg-hv15:hover { padding-left:22px; color:#C49B62; }
+.pg-hv16:hover { color:#F3EEE7; }
+.pg-hv17:hover { color:#8A6A3E; }
+.pg-hv18:hover { color:#8A6A3E; }
 </style>
 </head>
 <body>
-
-  <!-- Netlify form detection (hidden) -->
-  <form name="eqgenix-inquiry" netlify netlify-honeypot="bot-field" hidden>
-    <input name="form-name" type="hidden" value="eqgenix-inquiry">
-    <input name="bot-field">
-    <input name="fname">
-    <input name="lname">
-    <input name="email">
-    <input name="phone">
-    <input name="org">
-    <select name="interest"><option value=""></option></select>
-    <textarea name="message"></textarea>
-  </form>
-
-  <nav id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">EQGenix</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="thesis.html">Thesis</a></li>
-        <li><a href="framework.html">Framework</a></li>
-        <li><a href="advisory.html">Advisory</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="principal.html">Principal</a></li>
-        <li><a href="assessment.html">Diagnostic</a></li>
-      <li class="nav-mobile-cta preorder"><a href="sacred-deposits.html">Order the Book</a></li><li class="nav-mobile-cta inquire"><a href="contact.html">Inquire</a></li></ul>
-      <div class="nav-ctas"><a href="sacred-deposits.html" class="nav-preorder">Order the Book</a><a href="contact.html" class="nav-inquiry">Inquire</a></div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+<div data-bgroot="" style="font-family:'Instrument Sans',sans-serif; background:#F3EEE7; color:#26221C; overflow-x:clip;">
+<div style="position:sticky; top:0; z-index:500;"><header class="eqx-nav">
+  <div class="eqx-nav-bar">
+    <a href="index.html" class="eqx-nav-brand" aria-label="EQGenix home">EQGENIX</a>
+    <div class="eqx-nav-right">
+      <a href="partner.html" class="eqx-nav-partner">PARTNER WITH US</a>
+      <button class="eqx-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="eqx-menu">
+        <span class="eqx-nav-toggle-label">MENU</span>
+        <span class="eqx-nav-burger"><span></span><span></span></span>
       </button>
     </div>
-  </nav>
+  </div>
+  <div class="eqx-nav-ov" id="eqx-menu" hidden>
+    <div class="eqx-nav-ov-bar">
+      <a href="index.html" class="eqx-nav-brand light">EQGENIX</a>
+      <button class="eqx-nav-close" aria-label="Close menu">CLOSE&nbsp;&times;</button>
+    </div>
+    <div class="eqx-nav-ov-grid">
+      <nav class="eqx-nav-main" aria-label="Primary">
+        <a href="about.html" data-key="about"><em>01</em><span>About</span></a>
+        <a href="methodology.html" data-key="method"><em>02</em><span>Methodology</span></a>
+        <a href="impact.html" data-key="impact"><em>03</em><span>Impact</span></a>
+        <a href="research.html" data-key="research"><em>04</em><span>Insights</span></a>
+        <a href="assessment.html" data-key="diagnostic"><em>05</em><span>EWD-1&trade; Diagnostic</span></a>
+      </nav>
+      <div>
+        <div class="eqx-nav-inits-label">INITIATIVES</div>
+        <nav class="eqx-nav-inits" aria-label="Initiatives">
+          <a href="grit-to-genius.html" data-ovbg="#141A10"><small style="color:#C09B62;">K&ndash;12 FORMATION</small><span>Grit to Genius&trade;</span></a>
+          <a href="sovereign-shield.html" data-ovbg="#10161F"><small style="color:#8FA3B5;">LAW ENFORCEMENT</small><span>Sovereign Shield&trade;</span></a>
+          <a href="sovereign-station.html" data-ovbg="#1C130C"><small style="color:#C09578;">FIRE SERVICE</small><span>Sovereign Station&trade;</span></a>
+          <a href="sacred-deposits.html" data-ovbg="#1D1213"><small style="color:#B57E82;">MARRIAGE FORMATION &middot; AVAILABLE NOW</small><span>Sacred Deposits&trade;</span></a>
+          <a href="life-in-darkness.html" data-ovbg="#12101A"><small style="color:#9B93B6;">NONPROFIT &middot; 501(c)(3)</small><span>Life in Darkness</span></a>
+          <a href="mission-ready-civilian.html" data-ovbg="#12150C"><small style="color:#A8AE8C;">VETERAN TRANSITION</small><span>Mission-Ready Civilian&trade;</span></a>
+        </nav>
+        <a href="partner.html" class="eqx-nav-partner-btn">PARTNER WITH US</a>
+      </div>
+    </div>
+  </div>
+</header></div>
 
-  <section class="page-hero home-hero">
-    <p class="page-hero-brand">EQGenix</p>
-    <div class="page-hero-rule"></div>
-    <p class="page-hero-label">Emotional &amp; Cognitive Wealth Advisors</p>
-    <h1>The assets that <em>appreciate</em> cannot be downloaded.</h1>
-    <p class="page-hero-sub">EQGenix develops the human capacities that compound over a lifetime — cognitive sovereignty, emotional regulation, resilience architecture, relational intelligence, and effort tolerance. We advise individuals, families, and institutions on building the portfolio that matters most.</p>
-    <div class="hero-ctas" style="display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2.5rem;opacity:0;animation:fadeUp .7s .55s forwards">
-      <a href="eq-intake.html" class="hero-book-btn" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--gold);border:1px solid var(--gold);padding:15px 44px;text-decoration:none;transition:all .4s;display:inline-block">Book a Consultation</a>
-      <a href="https://www.bbb.org/us/ca/sacramento/profile/life-coach/eqgenix-inc-1156-90101825" target="_blank" rel="noopener noreferrer" title="EQGenix Inc. BBB Profile" style="display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;padding:12px 18px;border:1px solid rgba(201,168,76,.22);background:rgba(201,168,76,.045);margin-top:.25rem;max-width:100%;justify-content:center;text-align:left">
-        <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business" style="flex:0 0 auto">
-          <path d="M20 2L24.5 14H38L27.2 21.8L31.8 34L20 26.2L8.2 34L12.8 21.8L2 14H15.5L20 2Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
-          <text x="20" y="24" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#c9a84c">BBB</text>
-        </svg>
-        <div>
-          <p style="font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--gold-light);line-height:1.15">BBB Accredited Business</p>
-          <p style="font-family:var(--mono);font-size:.5rem;color:var(--stone);letter-spacing:.12em;margin-top:4px;text-transform:uppercase">Verified business profile</p>
+<!-- HERO — monumental typography, staged entrance -->
+<section data-screen-label="Hero" data-bg="#F3EEE7" style="position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:11vh 48px 12vh; box-sizing:border-box; overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute; inset:0; background:radial-gradient(ellipse 90% 70% at 50% 42%, #F7F2E9 0%, #F3EEE7 55%, #EBE2D0 100%);"></div>
+  <div style="position:relative;">
+    <div data-reveal="fade" data-dur="1.8s" style="display:flex; align-items:center; justify-content:center; gap:22px;">
+      <span aria-hidden="true" style="width:52px; height:1px; background:#8A6A3E; opacity:0.5;"></span>
+      <span style="font-size:14px; font-weight:600; letter-spacing:0.44em; color:#8A6A3E;">EMOTIONAL &amp; COGNITIVE WEALTH ADVISORS</span>
+      <span aria-hidden="true" style="width:52px; height:1px; background:#8A6A3E; opacity:0.5;"></span>
+    </div>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(56px,7.2vw,136px); line-height:1.04; letter-spacing:-0.01em; margin:5vh auto 0; max-width:1300px;">
+      <span data-reveal="rise" data-dur="1.6s" data-delay="300" style="display:block;">The Only Assets That</span>
+      <span data-reveal="rise" data-dur="1.6s" data-delay="550" style="display:block;"><em style="font-weight:300; color:#8A6A3E;">Appreciate</em></span>
+      <span data-reveal="rise" data-dur="1.6s" data-delay="800" style="display:block;">Are The Ones You Build.</span>
+    </h1>
+    <div data-reveal="fade" data-dur="1.6s" data-delay="1250" style="display:flex; align-items:center; justify-content:center; gap:48px; margin-top:7vh; flex-wrap:wrap;">
+      <a class="pg-hv1" href="assessment.html" style="background:#26221C; color:#F3EEE7; font-size:14px; font-weight:600; letter-spacing:0.26em; padding:19px 42px;">TAKE THE EWD-1™ DIAGNOSTIC</a>
+      <a class="pg-hv2" href="partner.html" style="font-size:14px; color:#26221C; border-bottom:1px solid #26221C; padding-bottom:7px;">Book a consultation</a>
+    </div>
+    <div data-reveal="fade" data-dur="1.6s" data-delay="1500" style="font-size:14px; font-weight:600; letter-spacing:0.34em; color:#A2977F; margin-top:9vh;">BUILT, NOT DOWNLOADED™</div>
+  </div>
+
+</section>
+
+<!-- THESIS — quiet centered editorial -->
+<section id="thesis" data-screen-label="Thesis" data-bg="#F3EEE7">
+  <div style="max-width:1080px; margin:0 auto; padding:10vh 48px; text-align:center;">
+    <div style="font-size:14px; font-weight:600; letter-spacing:0.34em; color:#A2977F;">OUR THESIS</div>
+    <h2 data-reveal="fade" data-dur="1.8s" style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,3vw,50px); line-height:1.35; margin:3.5vh auto 0; max-width:920px;">In an era of artificial intelligence, the scarcest resource is the capacity to remain fully human.</h2>
+    <p style="font-size:15px; line-height:2; color:#6E6455; max-width:640px; margin:3vh auto 0; text-wrap:pretty;">We do not offer advice for what to feel. We build the infrastructure for how to think — emotional and cognitive development as an engineering discipline: systematic, measurable, and designed for long-term appreciation.</p>
+    <a class="pg-hv3" href="about.html" style="display:inline-block; margin-top:5vh; font-size:14px; border-bottom:1px solid #26221C; padding-bottom:6px;">Discover more</a>
+  </div>
+</section>
+
+<!-- EDITORIAL PAIR I — practice worlds, Aman grid -->
+<section id="work" data-screen-label="The Practice I" data-bg="#F3EEE7">
+  <div style="max-width:1680px; margin:0 auto; padding:0 48px 4vh; box-sizing:border-box;">
+    <div style="font-size:14px; font-weight:600; letter-spacing:0.34em; color:#A2977F;">THE PRACTICE</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,3vw,52px); line-height:1.15; margin:4vh 0 0; max-width:720px;">Structured engagement across every demographic.</h2>
+    <a class="pg-hv4" href="partner.html" style="display:inline-block; margin-top:3.5vh; font-size:14px; border-bottom:1px solid #26221C; padding-bottom:6px;">Begin a conversation</a>
+  </div>
+</section>
+
+<!-- EDITORIAL TRIO — service worlds -->
+<section data-screen-label="The Practice II" data-bg="#F3EEE7">
+  <div style="max-width:1680px; margin:14vh auto 0; padding:0 48px; box-sizing:border-box;">
+    <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263;">IN SERVICE OF THOSE WHO SERVE</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:56px; align-items:start; margin-top:6vh;">
+      <a href="sovereign-shield.html" style="display:block; color:#26221C;">
+        <div data-reveal="mask" data-dur="1.5s" style="position:relative; aspect-ratio:4/4.7; overflow:hidden;">
+          <img class="pg-hv5" src="assets/images/shield-lion.png" alt="Sovereign Shield lion emblem" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
         </div>
+        <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">LAW ENFORCEMENT</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(23px,1.9vw,32px); margin-top:14px;">Sovereign Shield™</div>
+        <p style="font-size:14px; line-height:1.85; color:#6E6455; margin:14px 0 0; max-width:380px; text-wrap:pretty;">A formation infrastructure engineered for the people behind the badge — officers, supervisors, and command.</p>
       </a>
-    </div>
-    <span class="hero-mark">Built, Not Downloaded™</span>
-    <div class="hero-scroll"><div class="tick"></div><span>Scroll</span></div>
-  </section>
-
-  <section class="evidence">
-    <div class="evidence-inner">
-      <div class="evidence-item"><div class="evidence-stat">5</div><p class="evidence-label">Core pillars in the Emotional Portfolio™</p></div>
-      <div class="evidence-item"><div class="evidence-stat">6</div><p class="evidence-label">Advisory practices spanning K–12 through enterprise</p></div>
-      <div class="evidence-item"><div class="evidence-stat">40+</div><p class="evidence-label">Years of combined field practice and curriculum development</p></div>
-      <div class="evidence-item"><div class="evidence-stat">∞</div><p class="evidence-label">Compounding return on cognitive and emotional capital</p></div>
-    </div>
-  </section>
-
-  <!-- BBB Trust + Assessment Promo Row -->
-  <section class="trust-section">
-    <div class="trust-row">
-      <!-- BBB Trust Badge -->
-      <div class="trust-col">
-        <p class="trust-label">Accredited Member</p>
-        <a href="https://www.bbb.org" target="_blank" rel="noopener noreferrer" class="trust-bbb-badge" onmouseover="this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)'">
-          <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business">
-            <path d="M20 2L24.5 14H38L27.2 21.8L31.8 34L20 26.2L8.2 34L12.8 21.8L2 14H15.5L20 2Z" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
-            <text x="20" y="24" text-anchor="middle" font-family="serif" font-size="11" font-weight="700" fill="#c9a84c">BBB</text>
-          </svg>
-          <div>
-            <p class="trust-bbb-name">Better Business Bureau</p>
-            <p class="trust-bbb-sub">Accredited Business</p>
+      <a href="sovereign-station.html" style="display:block; color:#26221C;">
+        <div data-reveal="mask" data-dur="1.5s" data-delay="150" style="position:relative; aspect-ratio:4/4.7; overflow:hidden;">
+          <div class="pg-hv6" style="position:absolute; inset:0; background:#241A12; display:flex; align-items:center; justify-content:center; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/images/station-phoenix-crop.png" alt="Sovereign Station phoenix emblem" style="width:auto; height:88%; object-fit:contain;">
           </div>
-        </a>
-        <p class="trust-body">EQGenix Inc. is committed to upholding the highest standards of trust, transparency, and professional ethics.</p>
-      </div>
-      <!-- Divider -->
-      <div class="trust-divider"></div>
-      <!-- Assessment Promo -->
-      <div id="assessment-promo" class="trust-col">
-        <p class="trust-label">Free Assessment</p>
-        <h3 class="trust-heading">Emotional Wealth<br><em>Diagnostic</em></h3>
-        <p class="trust-body">Discover your current emotional wealth position. 10 questions. Immediate results with a personalized category.</p>
-        <a href="assessment.html" class="trust-cta" onmouseover="this.style.borderColor='var(--gold)';this.style.background='rgba(201,168,76,.06)'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)';this.style.background='transparent'">Take the Assessment →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section bg-dark">
-    <div style="max-width:680px;margin:0 auto 4rem;text-align:center">
-      <p class="section-label">Explore</p>
-      <div class="section-rule"></div>
-      <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:400;line-height:1.3;color:var(--white)">The architecture of human capacity.</h2>
-    </div>
-    <div class="home-previews">
-      <a href="thesis.html" class="home-preview">
-        <p class="section-label">01</p>
-        <h3>Our Thesis</h3>
-        <p>In an era of artificial intelligence, the scarcest resource is the capacity to remain fully human.</p>
-        <span class="arrow">Read More →</span>
-      </a>
-      <a href="framework.html" class="home-preview">
-        <p class="section-label">02</p>
-        <h3>The Emotional Portfolio™</h3>
-        <p>Five pillars of human capacity, each developed through structured methodology.</p>
-        <span class="arrow">Explore Framework →</span>
-      </a>
-      <a href="advisory.html" class="home-preview">
-        <p class="section-label">03</p>
-        <h3>Advisory Practices</h3>
-        <p>Structured engagement across every demographic — veterans, enterprise, families, K–12.</p>
-        <span class="arrow">View Practices →</span>
-      </a>
-      <a href="research.html" class="home-preview">
-        <p class="section-label">04</p>
-        <h3>Research &amp; Perspective</h3>
-        <p>Applied intelligence at the intersection of neuroscience and human capital.</p>
-        <span class="arrow">Read Research →</span>
-      </a>
-      <a href="principal.html" class="home-preview">
-        <p class="section-label">05</p>
-        <h3>Principal</h3>
-        <p>Decades of field practice in curriculum development, nonprofit leadership, and human formation.</p>
-        <span class="arrow">Meet the Founder →</span>
-      </a>
-      <a href="contact.html" class="home-preview">
-        <p class="section-label">06</p>
-        <h3>Begin a Conversation</h3>
-        <p>Every engagement starts with understanding. We welcome your inquiry.</p>
-        <span class="arrow">Inquire →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Consultation CTA Section -->
-  <section id="assessment" style="padding:100px 2rem;background:var(--slate-deep);position:relative;overflow:hidden">
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 60% 50%,rgba(201,168,76,.06) 0%,transparent 65%);pointer-events:none"></div>
-    <div style="max-width:680px;margin:0 auto;text-align:center;position:relative">
-      <p style="font-family:var(--mono);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">Begin Your Journey</p>
-      <div style="width:36px;height:1px;background:var(--gold-dim);margin:0 auto 2rem"></div>
-      <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.3;color:var(--white);margin-bottom:1.5rem">Start Your <em style="font-style:italic;color:var(--gold-light)">Emotional Wealth</em> Journey</h2>
-      <p style="font-size:1rem;color:var(--silver);line-height:1.85;font-weight:300;max-width:520px;margin:0 auto 3rem">Schedule a consultation to discuss your emotional resilience, decision clarity, and leadership development. Every engagement begins with understanding your unique portfolio.</p>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem">
-        <a href="eq-intake.html" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:16px 52px;text-decoration:none;display:inline-block;transition:all .4s;border:1px solid var(--gold)" onmouseover="this.style.background='var(--gold-light)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 40px rgba(201,168,76,.3)'" onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)';this.style.boxShadow='none'">Book Your Consultation</a>
-        <a href="assessment.html" style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);text-decoration:none;border-bottom:1px solid var(--silver-dim);padding-bottom:2px;transition:color .3s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--stone)'">Or take the Emotional Wealth Diagnostic first</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <a href="index.html" class="footer-brand">EQGenix Inc.</a>
-          <p class="footer-tagline">Built, Not Downloaded™</p>
         </div>
-        <div class="footer-columns">
-          <div class="footer-col"><p class="footer-col-title">Navigate</p><a href="index.html">Home</a><a href="thesis.html">Thesis</a><a href="framework.html">Framework</a><a href="advisory.html">Advisory</a></div>
-          <div class="footer-col"><p class="footer-col-title">Explore</p><a href="research.html">Research</a><a href="principal.html">Principal</a><a href="assessment.html">Diagnostic</a></div>
-          <div class="footer-col"><p class="footer-col-title">Connect</p><a href="contact.html">Inquire</a><a href="privacy.html">Privacy Policy</a></div>
+        <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">FIRE SERVICE</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(23px,1.9vw,32px); margin-top:14px;">Sovereign Station™</div>
+        <p style="font-size:14px; line-height:1.85; color:#6E6455; margin:14px 0 0; max-width:380px; text-wrap:pretty;">Human performance and resilience for the people who live where they serve — crew, leadership, family, identity.</p>
+      </a>
+      <a href="mission-ready-civilian.html" style="display:block; color:#26221C;">
+        <div data-reveal="mask" data-dur="1.5s" data-delay="300" style="position:relative; aspect-ratio:4/4.7; overflow:hidden;">
+          <div class="pg-hv7" style="position:absolute; inset:0; background:#000000; display:flex; align-items:center; justify-content:center; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/images/mrc-mark-crop.png" alt="Mission-Ready Civilian emblem" style="width:80%; height:auto; object-fit:contain;">
+          </div>
+        </div>
+        <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">VETERAN TRANSITION</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(23px,1.9vw,32px); margin-top:14px;">Mission-Ready Civilian™</div>
+        <p style="font-size:14px; line-height:1.85; color:#6E6455; margin:14px 0 0; max-width:380px; text-wrap:pretty;">Converts military cognitive discipline into civilian emotional and professional capital — twelve weeks, cohort-based.</p>
+      </a>
+    </div>
+  </div>
+  <div style="max-width:1680px; margin:12vh auto 0; padding:0 48px; box-sizing:border-box; display:grid; grid-template-columns:repeat(3,1fr); gap:56px; align-items:start;">
+    <a href="grit-to-genius.html" style="display:block; color:#26221C;">
+      <div data-reveal="mask" data-dur="1.5s" style="position:relative; aspect-ratio:4/4.55; overflow:hidden;">
+        <img class="pg-hv8" src="assets/images/g2g-globe.png" alt="Grit to Genius emblem" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
+      </div>
+      <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">K–12 FORMATION</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(24px,2.1vw,34px); margin-top:14px;">Grit to Genius™</div>
+      <p style="font-size:14.5px; line-height:1.85; color:#6E6455; margin:14px 0 0; text-wrap:pretty;">A comprehensive formation curriculum building emotional and cognitive capacity from the earliest developmental stages.</p>
+    </a>
+    <a href="sacred-deposits.html" style="display:block; color:#26221C;">
+      <div data-reveal="mask" data-dur="1.5s" data-delay="150" style="position:relative; aspect-ratio:4/4.55; overflow:hidden;">
+        <img class="pg-hv9" src="assets/images/sd-rings-navy.jpg" alt="Sacred Deposits 5:1 rings emblem" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
+      </div>
+      <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">AVAILABLE NOW</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(24px,2.1vw,34px); margin-top:14px;">Sacred Deposits™</div>
+      <p style="font-size:14.5px; line-height:1.85; color:#6E6455; margin:14px 0 0; text-wrap:pretty;">The 5:1 Blueprint for Protecting Your Marriage — a disciplined, daily practice for couples.</p>
+    </a>
+    <a href="life-in-darkness.html" style="display:block; color:#26221C;">
+      <div data-reveal="mask" data-dur="1.5s" data-delay="300" style="position:relative; aspect-ratio:4/4.55; overflow:hidden;">
+        <img class="pg-hv10" src="assets/images/lid-candle-green.jpg" alt="Life in Darkness candle emblem" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(0.22,1,0.36,1);">
+      </div>
+      <div style="font-size:14px; font-weight:600; letter-spacing:0.3em; color:#7A7263; margin-top:32px;">NONPROFIT · 501(c)(3)</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(24px,2.1vw,34px); margin-top:14px;">Life in Darkness</div>
+      <p style="font-size:14.5px; line-height:1.85; color:#6E6455; margin:14px 0 0; text-wrap:pretty;">An independent 501(c)(3) building the first city in America that measures its emotional wealth — upstream formation, beginning in Canyon Lake, California.</p>
+    </a>
+  </div>
+  <div style="max-width:1680px; margin:10vh auto 0; padding:0 48px; box-sizing:border-box;">
+    <div style="border-top:1px solid #DDD3BF; padding-top:32px; display:flex; gap:16px 44px; flex-wrap:wrap; font-size:14px; color:#7A7263;">
+      <span style="font-size:14px; font-weight:600; letter-spacing:0.26em; color:#A2977F; align-self:baseline;">ALSO IN THE PRACTICE</span>
+      <span style="color:#6E6455;">ASCEND™</span>
+      <span style="color:#6E6455;">The Blended Family Project™</span>
+      <span style="color:#6E6455;">Mentor to Men™</span>
+      <span style="color:#6E6455;">The Sovereign Workforce Program™</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE INTERLUDE — dark, cinematic pause -->
+<section data-screen-label="Quote" data-bg="#191713" style="color:#F3EEE7;">
+  <div style="max-width:1080px; margin:0 auto; padding:22vh 48px; text-align:center;">
+    <p data-reveal="fade" data-dur="1.8s" style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(26px,2.8vw,46px); line-height:1.5; margin:0;">“Emotional wealth is the only currency that appreciates under pressure, transfers across generations, and cannot be disrupted by technology.”</p>
+    <div data-reveal="fade" data-dur="1.4s" data-delay="300" style="font-size:14px; font-weight:600; letter-spacing:0.34em; color:#8A8171; margin-top:6vh;">BUILT, NOT DOWNLOADED™</div>
+  </div>
+</section>
+
+<!-- FRAMEWORK — sticky intro + editorial index -->
+<section id="framework" data-screen-label="Pillars" data-bg="#26211A" style="background:#26211A; color:#F3EEE7;">
+  <div style="max-width:1560px; margin:0 auto; padding:9vh 48px; box-sizing:border-box;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:48px; flex-wrap:wrap;">
+      <div>
+        <div style="font-size:14px; font-weight:600; letter-spacing:0.34em; color:#A2977F;">THE FRAMEWORK</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(36px,3.6vw,60px); line-height:1.1; margin:4vh 0 0; color:#F3EEE7;">The Emotional Portfolio™</h2>
+      </div>
+      <p style="font-size:14px; line-height:1.9; color:#B5AA96; margin:0; max-width:380px; text-wrap:pretty;">Five pillars of human capacity, each developed through structured methodology and applied across every practice we deliver.</p>
+    </div>
+    <div style="border-top:1px solid #C49B62; margin-top:8vh;">
+      <a class="pg-hv11" href="methodology.html#cap-1" style="display:grid; grid-template-columns:110px 1fr 1.1fr; gap:36px; align-items:baseline; padding:4.5vh 0; border-bottom:1px solid #3E3628; color:#F3EEE7; transition:padding-left 0.4s;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(38px,3.6vw,64px); line-height:1; color:#C49B62;">I</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(26px,2.6vw,42px); line-height:1.1;">Cognitive Sovereignty</span>
+        <span style="font-family: 'Cormorant Garamond',serif; font-style: italic; font-weight: 300; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; color: #FFFFFF">The foundation of autonomous decision-making.</span>
+      </a>
+      <a class="pg-hv12" href="methodology.html#cap-2" style="display:grid; grid-template-columns:110px 1fr 1.1fr; gap:36px; align-items:baseline; padding:4.5vh 0; border-bottom:1px solid #3E3628; color:#F3EEE7; transition:padding-left 0.4s;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(38px,3.6vw,64px); line-height:1; color:#C49B62;">II</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(26px,2.6vw,42px); line-height:1.1;">Emotional Regulation</span>
+        <span style="font-family: 'Cormorant Garamond',serif; font-style: italic; font-weight: 300; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; color: #FFFFFF">Precision over suppression. Architecture over avoidance.</span>
+      </a>
+      <a class="pg-hv13" href="methodology.html#cap-3" style="display:grid; grid-template-columns:110px 1fr 1.1fr; gap:36px; align-items:baseline; padding:4.5vh 0; border-bottom:1px solid #3E3628; color:#F3EEE7; transition:padding-left 0.4s;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(38px,3.6vw,64px); line-height:1; color:#C49B62;">III</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(26px,2.6vw,42px); line-height:1.1;">Resilience Architecture</span>
+        <span style="font-family: 'Cormorant Garamond',serif; font-style: italic; font-weight: 300; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; color: #FFFFFF">Engineered systems, not motivational rhetoric.</span>
+      </a>
+      <a class="pg-hv14" href="methodology.html#cap-4" style="display:grid; grid-template-columns:110px 1fr 1.1fr; gap:36px; align-items:baseline; padding:4.5vh 0; border-bottom:1px solid #3E3628; color:#F3EEE7; transition:padding-left 0.4s;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(38px,3.6vw,64px); line-height:1; color:#C49B62;">IV</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(26px,2.6vw,42px); line-height:1.1;">Relational Intelligence</span>
+        <span style="font-family: 'Cormorant Garamond',serif; font-style: italic; font-weight: 300; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; color: #FFFFFF">The compound interest of every meaningful relationship.</span>
+      </a>
+      <a class="pg-hv15" href="methodology.html#cap-5" style="display:grid; grid-template-columns:110px 1fr 1.1fr; gap:36px; align-items:baseline; padding:4.5vh 0; border-bottom:1px solid #3E3628; color:#F3EEE7; transition:padding-left 0.4s;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(38px,3.6vw,64px); line-height:1; color:#C49B62;">V</span>
+        <span style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(26px,2.6vw,42px); line-height:1.1;">Effort Tolerance</span>
+        <span style="font-family: 'Cormorant Garamond',serif; font-style: italic; font-weight: 300; font-size: clamp(17px,1.5vw,21px); line-height: 1.6; color: #FFFFFF">The differentiator between those who start and those who build.</span>
+      </a>
+    </div>
+    <div style="display:flex; justify-content:center; margin-top:7vh;">
+      <a class="pg-hv16" href="methodology.html" style="font-size:14px; font-weight:600; letter-spacing:0.26em; color:#C49B62; border-bottom:1px solid #4A4030; padding-bottom:7px;">EXPLORE THE METHODOLOGY →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC — split editorial -->
+<section data-screen-label="Diagnostic" data-bg="#EDE6D6">
+  <div style="max-width:1680px; margin:0 auto; padding:8vh 48px; box-sizing:border-box; display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:center;">
+    <div data-reveal="mask" data-dur="1.5s" style="position:relative; aspect-ratio:16/11; overflow:hidden; margin-left:-48px;">
+      <img src="assets/images/ewd-wordmark.png" alt="The Emotional Wealth Diagnostic™" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div style="max-width:480px;">
+      <div style="font-size:14px; font-weight: 600; letter-spacing: 0.34em; color: #A2977F">FREE ASSESSMENT</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,2.8vw,48px); line-height:1.15; margin:4vh 0 0;">The Emotional Wealth Diagnostic™</h2>
+      <p style="font-size:14.5px; line-height:1.9; color:#6E6455; margin:3.5vh 0 0; text-wrap:pretty;">Twenty-five statements, one at a time, across the five pillars. Immediate results, rendered as a statement of position — because emotional wealth has a balance sheet.</p>
+      <a class="pg-hv17" href="assessment.html" style="display:inline-block; margin-top:4.5vh; font-size:14px; border-bottom:1px solid #26221C; padding-bottom:6px;">Begin the diagnostic</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPAL — quiet close -->
+<section id="founder" data-screen-label="Principal" data-bg="#F3EEE7">
+  <div style="max-width:1080px; margin:0 auto; padding:10vh 48px; text-align:center;">
+    <div style="font-size:14px; font-weight: 600; letter-spacing: 0.34em; color: #575248">THE PRINCIPAL</div>
+    <p data-reveal="rise" data-dur="1.3s" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(24px,2.4vw,38px); line-height:1.5; margin:6vh auto 0; max-width:880px; color:#3E362A;">“The people who thrived were never the ones with the most resources. They were the ones who had built, deliberately, structurally, over time, the infrastructure to sustain themselves under pressure.”</p>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(19px,1.7vw,25px); margin-top:5vh;">Yvonne G. Hall</div>
+    <div style="font-size:14px; font-weight:600; letter-spacing:0.26em; color:#A2977F; margin-top:12px;">APPLIED BEHAVIORAL RESEARCHER · FOUNDER &amp; CEO</div>
+    <a class="pg-hv18" href="about.html#founder" style="display:inline-block; margin-top:4vh; font-size:14px; border-bottom:1px solid #26221C; padding-bottom:6px;">Meet the principal</a>
+  </div>
+</section>
+
+<footer class="eqx-footer">
+  <div class="eqx-footer-hero">
+    <div class="eqx-footer-kicker">EQGENIX</div>
+    <div class="eqx-footer-title">Built, Not Downloaded.&trade;</div>
+    <p class="eqx-footer-sub">EQGenix develops the human capacities that compound over a lifetime. We advise individuals, families, and institutions on building the portfolio that matters most.</p>
+    <a href="contact.html" class="eqx-footer-cta">START A CONVERSATION</a>
+  </div>
+  <div class="eqx-footer-mid">
+    <div class="eqx-footer-cols">
+      <div>
+        <a href="index.html" class="eqx-footer-brand"><img src="assets/images/eqg-logo.png" alt="" width="42" height="42" loading="lazy">EQGENIX</a>
+        <p class="eqx-footer-tag">Emotional &amp; Cognitive Wealth Advisors.<br>BBB Accredited Business.</p>
+        <div class="eqx-footer-contact">
+          <a href="mailto:contact@eqgenix.com">contact@eqgenix.com</a>
+          <a href="tel:+18888247244">888-824-7244</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-legal">© EQGenix Inc. All rights reserved. Built, Not Downloaded™, Emotional Portfolio™, Mission-Ready Civilian™, ASCEND™, Grit to Genius™, Mentor to Men™, and The Sovereign Workforce Program™ are trademarks of EQGenix Inc.</span>
-        <span class="footer-nonprofit">Advisory work supports <a href="https://www.lifeindarkness.org">Life in Darkness</a>, a 501(c)(3).</span>
+      <div>
+        <div class="eqx-footer-col-title">NAVIGATE</div>
+        <div class="eqx-footer-links">
+          <a href="grit-to-genius.html">Grit to Genius&trade;</a>
+          <a href="sovereign-shield.html">Sovereign Shield&trade;</a>
+          <a href="sovereign-station.html">Sovereign Station&trade;</a>
+          <a href="sacred-deposits.html">Sacred Deposits&trade;</a>
+          <a href="public-safety.html">Public Safety overview</a>
+        </div>
+      </div>
+      <div>
+        <div class="eqx-footer-col-title">EXPLORE</div>
+        <div class="eqx-footer-links">
+          <a href="about.html">About</a>
+          <a href="impact.html">Impact</a>
+          <a href="methodology.html">Methodology</a>
+          <a href="assessment.html">EWD-1&trade; Assessment</a>
+          <a href="genius-capacity-index.html">Genius Capacity Index&trade;</a>
+          <a href="research.html">Research &amp; publications</a>
+        </div>
+      </div>
+      <div>
+        <div class="eqx-footer-col-title">CONNECT</div>
+        <div class="eqx-footer-links">
+          <a href="partner.html">Partnership</a>
+          <a href="contact.html">Contact</a>
+          <a href="careers.html">Careers</a>
+          <a href="privacy.html">Privacy policy</a><a href="policies.html">Site policies & terms</a>
+        </div>
       </div>
     </div>
-  </footer>
-
-  <script>
-/**
- * EQGenix — Main JavaScript
- * Scroll effects, mobile navigation, reveal animations
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  // Nav scroll effect
-  const nav = document.getElementById('mainNav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-  }
-
-  // Mobile menu
-  const toggle = document.getElementById('mobileToggle');
-  const links = document.getElementById('navLinks');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-    links.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => links.classList.remove('open'));
-    });
-  }
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  if (reveals.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    );
-    reveals.forEach(el => observer.observe(el));
-  }
-
-});
-
-</script>
+  </div>
+  <div class="eqx-footer-legal">
+    <div class="eqx-footer-legal-grid">
+      <p>&copy; EQGenix Inc. All rights reserved. Built, Not Downloaded&trade;, Emotional Portfolio&trade;, Mission-Ready Civilian&trade;, ASCEND&trade;, Grit to Genius&trade;, Mentor to Men&trade;, The Sovereign Workforce Program&trade;, Sovereign Shield&trade;, Sacred Deposits&trade;, Sacred Union Set&trade;, and Subsidizing Absence&trade; are trademarks of EQGenix Inc.</p>
+      <p class="eqx-footer-lid">Advisory work supports <a href="https://www.lifeindarkness.org" target="_blank" rel="noopener noreferrer">Life in Darkness</a>, a 501(c)(3).</p>
+    </div>
+  </div>
+</footer>
+</div>
+<script src="assets/js/global.js" defer></script>
+<script src="assets/js/fx.js" defer></script>
 </body>
 </html>

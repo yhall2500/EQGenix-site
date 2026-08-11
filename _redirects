@@ -1,0 +1,5 @@
+# EQGenix — Netlify redirects
+# Clean aliases only. No SPA wildcard: this is a multi-page static site.
+/mission-ready-civilian  /mission-ready-civilian.html  200
+/assessment              /assessment.html              200
+/contact                 /contact.html                 200

@@ -1,4 +1,4 @@
-/* EWD-1(tm) Public Screener — vanilla implementation */
+/* EWD-1(tm) Public Diagnostic — vanilla implementation */
 (function () {
   'use strict';
   var PILLARS = [
@@ -158,7 +158,7 @@
     var name = ($('ewd-name') || {}).value || '';
     var email = ($('ewd-email') || {}).value || '';
     if (name.trim() || email.trim()) {
-      var body = new URLSearchParams({ 'form-name':'ewd-lead', name: name, email: email, instrument:'EWD-1 Public Screener v1.0', responses: JSON.stringify(state.responses) }).toString();
+      var body = new URLSearchParams({ 'form-name':'ewd-lead', name: name, email: email, instrument:'EWD-1 Public Diagnostic v1.0', responses: JSON.stringify(state.responses) }).toString();
       fetch('/', { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body: body }).catch(function () {});
     }
     renderResult();

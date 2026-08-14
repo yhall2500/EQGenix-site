@@ -1,7 +1,6 @@
 FILE MANIFEST
 
 /404.html
-/FILE-MANIFEST.txt
 /README.md
 /about.html
 /assessment.html
@@ -47,6 +46,7 @@ FILE MANIFEST
 /careers.html
 /contact.html
 /eq-success.html
+/founding-agency-case.html
 /genius-capacity-index.html
 /grit-to-genius.html
 /impact.html
@@ -60,6 +60,7 @@ FILE MANIFEST
 /partner.html
 /policies.html
 /privacy.html
+/procurement.html
 /public-safety.html
 /research.html
 /robots.txt
@@ -67,3 +68,16 @@ FILE MANIFEST
 /sitemap.xml
 /sovereign-shield.html
 /sovereign-station.html
+/FILE-MANIFEST.txt
+/sovereign-worker.html
+/sovereign-worker-standard.html
+/sovereign-worker-five.html
+/sovereign-worker-evidence.html
+/sovereign-workforce.html
+/workforce-capacity-audit.html
+/workforce-deployment.html
+/sovereign-worker-certificate.html
+/facilitator-certification.html
+/assessment-use-policy.html
+/workforce-inquiry.html
+/assets/images/og-card.png

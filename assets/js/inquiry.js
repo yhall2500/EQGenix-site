@@ -11,6 +11,7 @@ function g2gBandForAge(age){ age = parseInt(age, 10); if (isNaN(age)) return "";
     g2g:     { kicker:'GRIT TO GENIUS\u2122 \u00b7 YOUTH', headline:'Request a seat \u2014 or a city.', intro:'Twelve seats per age band, then the waitlist begins. Tell us who the seat is for, or inquire about bringing a cohort to your city or school.', orgLabel:'YOUR CONTEXT', orgPh:'Family, school, or organization', rolePh:'Parent, educator, sponsor\u2026', specificLabel:'ABOUT THE SEAT', q1:'Age of participant(s)', q1Ph:'e.g. 13', q2:'City', q2Ph:'e.g. Canyon Lake, CA' },
     sd:      { kicker:'SACRED DEPOSITS\u2122 \u00b7 MARRIAGE', headline:'Bring Sacred Deposits\u2122 to your community.', intro:'For churches, counselors, and group leaders \u2014 tell us about your congregation or practice and how you\u2019d like to use the 5:1 framework.', orgLabel:'YOUR ORGANIZATION', orgPh:'Church / practice / organization', rolePh:'Pastor, counselor, leader\u2026', specificLabel:'ABOUT THE GROUP', q1:'Group size', q1Ph:'e.g. 20 couples', q2:'Format', q2Ph:'Small group, retreat, counseling\u2026' },
     lid:     { kicker:'LIFE IN DARKNESS \u00b7 501(c)(3)', headline:'Partner with Life in Darkness.', intro:'For agencies, funders, and community partners \u2014 tell us how you\u2019d like to support or deliver upstream formation in your community.', orgLabel:'YOUR ORGANIZATION', orgPh:'Organization / agency', rolePh:'Role', specificLabel:'ABOUT THE PARTNERSHIP', q1:'Interest', q1Ph:'Funding, delivery, referral\u2026', q2:'Community', q2Ph:'City / county' },
+    'shield-officer': { kicker:'SOVEREIGN SHIELD\u2122 \u00b7 OFFICER WAITLIST', headline:'Join the officer waitlist.', intro:'For individual officers. Your name goes on the notification list \u2014 nothing else. We contact you when Sovereign Shield Tier I opens for your agency or region, and your interest is never shared with your department.', orgLabel:'YOUR CONTEXT', orgPh:'Agency (optional)', rolePh:'Rank / role (optional)', specificLabel:'ABOUT YOU', q1:'How did you hear about Sovereign Shield?', q1Ph:'Colleague, briefing, search\u2026', q2:'Anything we should know?', q2Ph:'Optional' },
     consult: { kicker:'EQGENIX \u00b7 CONSULTATION', headline:'Book a consultation.', intro:'A thirty-minute advisory conversation \u2014 your context, your questions, and whether an engagement is the right fit. Tell us a little about yourself and we\u2019ll schedule it.', orgLabel:'YOUR ORGANIZATION', orgPh:'Organization (optional)', rolePh:'Role (optional)', specificLabel:'ABOUT THE CONVERSATION', q1:'What would you like to discuss?', q1Ph:'Program, advisory, partnership\u2026', q2:'Preferred days / times', q2Ph:'e.g. weekday mornings' }
   };
   function txt(id, v) { var el = document.getElementById(id); if (el && v) el.textContent = v; }
@@ -31,6 +32,11 @@ function g2gBandForAge(age){ age = parseInt(age, 10); if (isNaN(age)) return "";
       var form = document.getElementById('inq-form');
       var fn = document.getElementById('inq-formname');
       if (form && fn) { fn.value = 'mission-ready-civilian-intake'; form.setAttribute('action', '/mrc-success.html'); }
+    }
+    if (p === 'shield-officer') {
+      var oForm = document.getElementById('inq-form');
+      var ofn = document.getElementById('inq-formname');
+      if (oForm && ofn) { ofn.value = 'officer-waitlist'; oForm.setAttribute('name', 'officer-waitlist'); }
     }
     if (p === 'g2g') {
       var gForm = document.getElementById('inq-form');

@@ -357,3 +357,4 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
 .eqx-nav-cmd-sub a:last-child { padding-bottom:22px !important; }
 .eqx-nav-cmd-sub a span { font-size:clamp(22px,1.8vw,28px) !important; margin-top:6px !important; }
 .eqx-nav-cmd-sub a:hover { padding-left:44px !important; }
+

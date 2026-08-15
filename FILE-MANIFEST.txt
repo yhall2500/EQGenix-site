@@ -1,8 +1,12 @@
-FILE MANIFEST
+EQGENIX NETLIFY DEPLOY PACKAGE — FILE MANIFEST
+Generated: 2026-08-14
 
 /404.html
+/DECISIONS-REGISTER.md
+/FILE-MANIFEST.txt
 /README.md
 /about.html
+/assessment-use-policy.html
 /assessment.html
 /assets/css/global.css
 /assets/docs/ai-displacement-paradox.pdf
@@ -14,28 +18,28 @@ FILE MANIFEST
 /assets/docs/the-formation-gap.pdf
 /assets/docs/trained-for-the-call.pdf
 /assets/icons/favicon.png
-/assets/images/eqg-logo.png
-/assets/images/ewd-wordmark.png
-/assets/images/g2g-globe.png
-/assets/images/g2g-logo.png
-/assets/images/hold-the-line.png
-/assets/images/lid-candle-cream.png
+/assets/images/eqg-logo-sm.png
+/assets/images/ewd-wordmark-sm.jpg
+/assets/images/g2g-globe-sm.jpg
+/assets/images/g2g-logo-sm.png
+/assets/images/hold-the-line-sm.jpg
+/assets/images/lid-candle-cream-sm.png
 /assets/images/lid-candle-green.jpg
-/assets/images/lid-candle.png
-/assets/images/mrc-logo.png
-/assets/images/mrc-mark-crop.png
-/assets/images/mrc-mark.png
-/assets/images/sd-book.png
+/assets/images/mrc-logo-sm.png
+/assets/images/mrc-mark-crop-sm.jpg
+/assets/images/og-card.png
+/assets/images/sd-book-sm.png
 /assets/images/sd-rings-navy.jpg
-/assets/images/sd-rings.png
-/assets/images/shield-lion-transparent.png
-/assets/images/shield-lion.png
-/assets/images/shield-logo-web.png
-/assets/images/station-phoenix-crop.png
-/assets/images/station-phoenix.png
-/assets/images/those-who-are-rising.png
-/assets/images/those-who-respond.png
-/assets/images/yvonne-photo.png
+/assets/images/sd-rings-sm.png
+/assets/images/shield-lion-sm.jpg
+/assets/images/shield-lion-transparent-sm.png
+/assets/images/shield-logo-web-sm.png
+/assets/images/station-phoenix-crop-sm.png
+/assets/images/station-phoenix-sm.png
+/assets/images/sw-mark-sm.png
+/assets/images/those-who-are-rising-sm.jpg
+/assets/images/those-who-respond-sm.jpg
+/assets/images/yvonne-photo-sm.jpg
 /assets/js/assessment.js
 /assets/js/contact.js
 /assets/js/fx.js
@@ -46,6 +50,7 @@ FILE MANIFEST
 /careers.html
 /contact.html
 /eq-success.html
+/facilitator-certification.html
 /founding-agency-case.html
 /genius-capacity-index.html
 /grit-to-genius.html
@@ -68,16 +73,14 @@ FILE MANIFEST
 /sitemap.xml
 /sovereign-shield.html
 /sovereign-station.html
-/FILE-MANIFEST.txt
-/sovereign-worker.html
-/sovereign-worker-standard.html
-/sovereign-worker-five.html
+/sovereign-worker-certificate.html
 /sovereign-worker-evidence.html
+/sovereign-worker-five.html
+/sovereign-worker-standard.html
+/sovereign-worker.html
 /sovereign-workforce.html
 /workforce-capacity-audit.html
 /workforce-deployment.html
-/sovereign-worker-certificate.html
-/facilitator-certification.html
-/assessment-use-policy.html
 /workforce-inquiry.html
-/assets/images/og-card.png
+
+Total files: 81

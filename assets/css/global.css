@@ -358,3 +358,18 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
 .eqx-nav-cmd-sub a span { font-size:clamp(22px,1.8vw,28px) !important; margin-top:6px !important; }
 .eqx-nav-cmd-sub a:hover { padding-left:44px !important; }
 
+@media (max-width: 860px) {
+  /* G2G Homeschool pages: numbered six-part / safeguarding ledgers tighten when stacked */
+  [style*="grid-template-columns:110px 1fr 1.1fr"] { gap: 12px !important; padding-top: 3vh !important; padding-bottom: 3vh !important; }
+  /* Hero fact strips step down on phones */
+  [data-screen-label="Homeschool Hero"] [style*="letter-spacing:0.2em"],
+  [data-screen-label="Navigators Hero"] [style*="letter-spacing:0.2em"] { font-size: 12px !important; }
+  /* Learning-model chips shrink */
+  [data-screen-label="Learning Model"] span[style*="padding:14px 22px"] { padding: 10px 14px !important; font-size: 13px !important; }
+}
+@media (max-width: 560px) {
+  /* G2G Homeschool CTA rows stack on phones */
+  [style*="display:flex"][style*="align-items:center"][style*="gap:44px"],
+  [style*="display:flex"][style*="align-items:center"][style*="gap:40px"][style*="flex-wrap:wrap"] { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
+  [style*="display:flex"][style*="justify-content:center"][style*="align-items:center"][style*="gap:44px"] { align-items: center !important; }
+}

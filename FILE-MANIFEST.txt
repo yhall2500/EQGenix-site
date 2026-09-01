@@ -84,3 +84,7 @@ Generated: 2026-08-14
 /workforce-inquiry.html
 
 Total files: 81
+grit-to-genius-homeschool.html — Grit to Genius™ Homeschool overview (Navigators™, ages 11–13, 36 weeks, self-paced; routes to grittogenius.com)
+grit-to-genius-curriculum.html — G2G Homeschool curriculum overview (weekly six-part structure, learning loop)
+grit-to-genius-navigators.html — Navigators™ product page (ages 11–13, 36 weeks, $497, Sept 15 2026)
+grit-to-genius-homeschool-inquiry.html — G2G Homeschool inquiry form (Netlify form: g2g-homeschool-inquiry)

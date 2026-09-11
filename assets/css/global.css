@@ -373,3 +373,25 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
   [style*="display:flex"][style*="align-items:center"][style*="gap:40px"][style*="flex-wrap:wrap"] { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
   [style*="display:flex"][style*="justify-content:center"][style*="align-items:center"][style*="gap:44px"] { align-items: center !important; }
 }
+
+@media (max-width: 860px) {
+  /* Hero/product info cards tighten on phones */
+  [style*="padding:clamp(32px,3vw,48px)"], [style*="padding: clamp(32px,3vw,48px)"],
+  [style*="padding:clamp(30px,3vw,46px)"], [style*="padding: clamp(30px,3vw,46px)"],
+  [style*="padding:clamp(30px,3.4vw,48px)"], [style*="padding: clamp(30px,3.4vw,48px)"],
+  [style*="padding:clamp(36px,5vw,70px)"], [style*="padding: clamp(36px,5vw,70px)"] { padding: 26px 20px !important; }
+  /* Big price figures step down so cards never overflow */
+  span[style*="font-size:clamp(56px,5vw,92px)"], span[style*="font-size:clamp(48px,4.4vw,80px)"] { font-size: clamp(44px,12vw,64px) !important; }
+  /* Capacities checkerboard: two-up on phones instead of one long column */
+  [data-screen-label="Built Not Downloaded"] [style*="grid-template-columns:repeat(4,minmax(0,1fr))"] { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  [data-screen-label="Built Not Downloaded"] [style*="padding:5vh 30px"] { padding: 3vh 20px !important; }
+  /* Five pillars: cells keep compact padding once stacked (5-col grid collapses via the generic rule) */
+  [data-screen-label="Five Pillars"] [style*="padding:44px 30px 40px"] { padding: 28px 22px !important; }
+  /* FAQ accordions: comfortable tap targets and text on phones */
+  summary[style*="padding:26px 0"] { padding: 20px 0 !important; font-size: 15px !important; }
+  /* Spec-ledger label/value rows keep breathing room when stacked */
+  [style*="padding:22px 0"][style*="border-bottom"], [style*="padding:24px 0"][style*="border-bottom"] { padding-top: 16px !important; padding-bottom: 16px !important; }
+  /* Environment/pathway cards: fixed compact padding */
+  [style*="padding:6vh 34px"], [style*="padding: 6vh 34px"] { padding: 30px 22px !important; }
+  [style*="padding:4.5vh 30px"], [style*="padding: 4.5vh 30px"] { padding: 24px 20px !important; }
+}

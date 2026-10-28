@@ -90,3 +90,6 @@ grit-to-genius-navigators.html — Navigators™ product page (ages 11–13, 36 
 grit-to-genius-homeschool-inquiry.html — G2G Homeschool inquiry form (Netlify form: g2g-homeschool-inquiry)
 grit-to-genius-builders.html — Builders™ band page (ages 8–10, foundation)
 grit-to-genius-sovereigns.html — Sovereigns™ band page (ages 14–17, 36 weeks, six units)
+news.html — News index
+news-canyon-lake-police-fire-partnership.html — Press release: Canyon Lake Police & Fire partnership (Oct 28, 2026)
+assets/docs/eqgenix-canyon-lake-police-fire-release.pdf — Release PDF

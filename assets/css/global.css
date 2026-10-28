@@ -395,3 +395,15 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
   [style*="padding:6vh 34px"], [style*="padding: 6vh 34px"] { padding: 30px 22px !important; }
   [style*="padding:4.5vh 30px"], [style*="padding: 4.5vh 30px"] { padding: 24px 20px !important; }
 }
+
+@media (max-width: 860px) {
+  [data-screen-label="Latest News"] { margin-top: 8vh !important; }
+  [data-screen-label="Latest News"] > div { grid-template-columns: 1fr !important; gap: 14px !important; padding: 32px 22px !important; }
+  [data-screen-label="Latest News"] > div > div:first-child { display: flex !important; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  [data-screen-label="Latest News"] > div > div:first-child > div { margin-top: 0 !important; font-size: 13px !important; }
+  [data-screen-label="Latest News"] > div > a span:first-child { font-size: 25px !important; line-height: 1.22 !important; }
+  [data-screen-label="Latest News"] > div > a span:last-child { font-size: 14px !important; line-height: 1.7 !important; margin-top: 8px !important; }
+  [data-screen-label="Latest News"] > div > div:last-child { flex-direction: row !important; align-items: center !important; justify-content: space-between; gap: 16px !important; margin-top: 10px; flex-wrap: wrap; }
+  [data-screen-label="Latest News"] > div > div:last-child > a:first-child { padding: 14px 20px !important; font-size: 12px !important; letter-spacing: 0.18em !important; }
+  [data-screen-label="Latest News"] > div > div:last-child > a:last-child { font-size: 12px !important; }
+}

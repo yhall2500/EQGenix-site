@@ -430,3 +430,8 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
   #founder [data-reveal="mask"], #co-founder [data-reveal="mask"] { max-width: 340px; width: 100%; }
   #founder details summary, #co-founder details summary { font-size: 13px !important; letter-spacing: 0.18em !important; }
 }
+
+/* Top bar: separate Partner link from the menu toggle */
+.eqx-nav-right { gap:28px; }
+.eqx-nav-partner { padding-right:28px; border-right:1px solid #D8CFBE; line-height:1.6; }
+.eqx-nav-toggle { padding:6px 0; }

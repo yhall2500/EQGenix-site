@@ -6,7 +6,7 @@ window.G2G_BANDS = [
 ];
 window.G2G_TOTAL_SEATS = window.G2G_BANDS.reduce(function(n,b){ return n + b.seats; }, 0);
 // cohortStartDate: nullable. null renders the season only; a confirmed date converts the line to enrollment in one commit.
-window.G2G_COHORT = { season: "Fall 2026", cohortStartDate: null };
+window.G2G_COHORT = { season: null, cohortStartDate: null };
 document.addEventListener("DOMContentLoaded", function(){
   var el = document.getElementById("g2g-bands");
   if (el) el.textContent = window.G2G_BANDS.map(function(b){ return b.label; }).join(" \u00b7 ");

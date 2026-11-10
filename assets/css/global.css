@@ -407,3 +407,26 @@ body.eqx-menu-open .eqx-nav-burger span:last-child { transform:translateY(-3.25p
   [data-screen-label="Latest News"] > div > div:last-child > a:first-child { padding: 14px 20px !important; font-size: 12px !important; letter-spacing: 0.18em !important; }
   [data-screen-label="Latest News"] > div > div:last-child > a:last-child { font-size: 12px !important; }
 }
+
+@media (max-width: 860px) {
+  /* Editor-resized text blocks (fixed px width/height) reflow on phones */
+  h1[style*=" width: "], h2[style*=" width: "], h3[style*=" width: "], h4[style*=" width: "], p[style*=" width: "],
+  h1[style*=";width:"], h2[style*=";width:"], h3[style*=";width:"], p[style*=";width:"] { width: auto !important; height: auto !important; max-width: 100% !important; }
+}
+@media (max-width: 560px) {
+  /* Long no-wrap labels and buttons may wrap on narrow phones */
+  a[style*="white-space:nowrap"], a[style*="white-space: nowrap"] { white-space: normal !important; }
+  [style*="letter-spacing:0.3em"] > span[style*="white-space:nowrap"] { white-space: normal !important; }
+}
+
+@media (max-width: 560px) {
+  /* Oversized uppercase statement lines fit narrow phones */
+  [style*="font-size:clamp(38px,4.8vw,84px)"][style*="text-transform:uppercase"] { font-size: 30px !important; overflow-wrap: break-word; }
+  [style*="margin:2vh 0 0 12vw"] { margin-left: 0 !important; }
+}
+
+@media (max-width: 860px) {
+  /* Executive portraits: keep a sensible size once stacked */
+  #founder [data-reveal="mask"], #co-founder [data-reveal="mask"] { max-width: 340px; width: 100%; }
+  #founder details summary, #co-founder details summary { font-size: 13px !important; letter-spacing: 0.18em !important; }
+}

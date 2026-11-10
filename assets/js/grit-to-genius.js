@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var el = document.getElementById("g2g-bands");
   if (el) el.textContent = window.G2G_BANDS.map(function(b){ return b.label; }).join(" \u00b7 ");
   var cl = document.getElementById("g2g-cohort-line");
-  if (cl) cl.textContent = window.G2G_COHORT.cohortStartDate
-    ? "Founding cohort begins " + window.G2G_COHORT.cohortStartDate + ". Enrollment is open."
-    : "Founding cohort begins " + window.G2G_COHORT.season + ". Pre-registration is open.";
+  if (cl) cl.textContent = "Upcoming cohort dates and enrollment details will be announced when confirmed.";
 });
 /* Grit to Genius — week arc scroll sync */
 (function () {
